@@ -1,0 +1,5 @@
+src/images/
+**/sass/bootstrap/
+**/sass/fontawesome/
+src/webfonts/
+src/scripts/bootstrap.min.*

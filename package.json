@@ -1,0 +1,49 @@
+{
+  "name": "kodilla-projekt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prewatch": "npm run clean",
+    "watch": "parcel src/index.html --open --no-autoinstall --port 8080",
+    "prebuild": "npm run clean",
+    "build": "parcel build src/index.html",
+    "clean": "rimraf dist",
+    "code-quality": "npm run format && npm run lint",
+    "format": "prettier --write \"src/**/*.{js,html,scss}\"",
+    "lint": "eslint src/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
+    "parcel-bundler": "^1.11.0",
+    "posthtml-include": "^1.2.0",
+    "prettier": "^1.15.3",
+    "pretty-quick": "^1.8.0",
+    "rimraf": "^2.6.3",
+    "sass": "^1.15.3"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6"
+  }
+}
