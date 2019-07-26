@@ -33,4 +33,20 @@
     background-color: #2a2a2a;
     color: #ffffff;
   }
+
+  &:active {
+    color: #d58e32;
+  }
+}
+
+.btn-active {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #d58e32;
+  color: #d58e32;
+  font-size: 13px;
+  line-height: 22px;
+  &:hover {
+    background-color: #2a2a2a;
+  }
 }
