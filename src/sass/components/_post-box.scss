@@ -1,6 +1,23 @@
 .post-box {
   margin-bottom: 2rem;
 
+  &-link {
+    color: $text-color;
+
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+
+      .btn-post {
+        background: $primary;
+      }
+
+      h5 {
+        color: $primary !important;
+      }
+    }
+  }
+
   .cover {
     padding: 70% 25px 0 25px;
     background: {
@@ -33,7 +50,7 @@
     padding: 25px;
 
     h5 {
-      color: $primary;
+      color: $text-color;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
