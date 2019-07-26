@@ -2,6 +2,35 @@
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
+  & .product-box-btn-hover {
+    @include fade;
+    visibility: hidden;
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  &:hover {
+    & .product-box-btn-hover {
+      visibility: visible;
+      transform: translateY(0px);
+      opacity: 1;
+    }
+    & .product-box-btn-price {
+      background-color: $text-color;
+      color: white;
+      @include fade-long;
+    }
+    cursor: pointer;
+  }
+
+  & .product-box-btn-price {
+    @include fade;
+    background-color: white;
+    color: $text-color;
+    &:hover {
+      @include fade-long;
+      transform: scale((1.03));
+    }
+  }
 
   .photo {
     position: relative;

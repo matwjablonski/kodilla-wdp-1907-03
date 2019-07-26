@@ -1,0 +1,6 @@
+@mixin fade {
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+@mixin fade-long {
+  transition: 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
