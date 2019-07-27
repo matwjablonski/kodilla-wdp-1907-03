@@ -1,6 +1,6 @@
 .btn-main {
-  background-color: $color-black;
-  color: $color-white;
+  background-color: $footer-claim-bg;
+  color: $white;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
@@ -8,7 +8,7 @@
 
   @include hover {
     &:not(.no-hover):hover {
-      color: $color-white !important;
+      color: $white;
       background-color: $primary;
       text-decoration: none;
     }
@@ -26,30 +26,30 @@
 .btn-outline {
   display: inline-block;
   padding: 5px 10px;
-  border: 1px solid $color-black;
-  color: $color-black;
+  border: 1px solid $footer-claim-bg;
+  color: $footer-claim-bg;
   font-size: 13px;
   line-height: 22px;
 
   @include hover {
-    background-color: $color-black;
-    color: $color-white;
+    background-color: $footer-claim-bg;
+    color: $white;
   }
 
   &:active {
-    color: $color-active;
+    color: $primary;
   }
 }
 
 .btn-active {
   display: inline-block;
   padding: 5px 10px;
-  border: 1px solid $color-active;
-  color: $color-active;
+  border: 1px solid $primary;
+  color: $primary;
   font-size: 13px;
   line-height: 22px;
   @include hover {
-    background-color: $color-black;
-    border-color: $color-black;
+    background-color: $footer-claim-bg;
+    border-color: $footer-claim-bg;
   }
 }
