@@ -2,8 +2,15 @@
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
+  position: relative;
 
-  .photo {
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .photo-overlay {
     position: relative;
     padding: 80% 10px 0 10px;
     background: {
