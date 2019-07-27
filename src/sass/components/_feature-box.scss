@@ -2,6 +2,7 @@
   border: 1px solid #b6b6b6;
   text-align: center;
   margin-top: 40px;
+  position: relative;
   .icon {
     transform: translateY(-50%);
     i {
@@ -52,5 +53,17 @@
     .content {
       color: $primary;
     }
+  }
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    z-index: 10;
+    background-color: #fff;
+    opacity: 0;
+    filter: alpha(opacity=1);
   }
 }
