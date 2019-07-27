@@ -6,7 +6,7 @@
   font-weight: 600;
   padding: 10px 30px;
 
-  @include hover {
+  @include hover-only {
     &:not(.no-hover):hover {
       color: $white;
       background-color: $primary;
@@ -31,7 +31,7 @@
   font-size: 13px;
   line-height: 22px;
 
-  @include hover {
+  @include hover-only {
     background-color: $footer-claim-bg;
     color: $white;
   }
@@ -48,7 +48,7 @@
   color: $primary;
   font-size: 13px;
   line-height: 22px;
-  @include hover {
+  @include hover-only {
     background-color: $footer-claim-bg;
     border-color: $footer-claim-bg;
   }
