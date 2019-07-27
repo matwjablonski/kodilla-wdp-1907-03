@@ -10,3 +10,8 @@ $white: #fff;
 $text-color: #2a2a2a;
 
 $form-border-color: #292929;
+
+// TIMING VARIABLES (for transitions in mixins)
+
+$veryShortInterval: 0.3s;
+$shortInterval: 0.7s;

@@ -1,6 +1,6 @@
 @mixin fade {
-  transition: 0.3s ease-in-out;
+  transition: $veryShortInterval ease-in-out;
 }
 @mixin fade-long {
-  transition: 0.7s ease-in-out;
+  transition: $shortInterval ease-in-out;
 }
