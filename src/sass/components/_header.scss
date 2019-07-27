@@ -2,10 +2,15 @@ header {
   .top-bar {
     background-color: $header-topbar-bg;
 
+    .space-between {
+      justify-content: space-between;
+    }
+
     ul {
       list-style: none;
       margin: 0;
       padding: 0;
+      position: relative;
 
       li {
         display: inline-block;
@@ -22,26 +27,14 @@ header {
         }
       }
     }
-
-    .text-left ul li {
-      margin-right: 1.5rem;
-
-      i {
-        margin-left: 5px;
-      }
-    }
-
-    .text-right ul li {
-      margin-left: 1.5rem;
-
-      i {
-        margin-right: 5px;
-      }
-    }
   }
 
   .company-claim {
     background-color: $header-bg;
+
+    .space-between {
+      justify-content: space-between;
+    }
 
     .container > .row {
       height: 145px;
@@ -50,13 +43,11 @@ header {
     .phone-number {
       p {
         margin: 0;
-        font-size: 17px;
         line-height: 42px;
         color: rgb(216, 216, 216);
         font-weight: 500;
 
         i {
-          font-size: 32px;
           color: $primary;
           vertical-align: middle;
           margin-top: -3px;
@@ -219,6 +210,123 @@ header {
           background-color: transparent;
           outline: none;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    .top-bar {
+      .phone-hidden {
+        display: none;
+      }
+
+      .text-left {
+        ul {
+          padding-left: 15px;
+        }
+
+        ul li {
+          margin-right: 15px;
+          i {
+            margin-left: 5px;
+          }
+        }
+      }
+
+      .text-right {
+        ul {
+          padding-right: 15px;
+        }
+        ul li {
+          margin-left: 10px;
+
+          i {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    .company-claim {
+      .logo {
+        text-align: left;
+        position: relative;
+        padding-left: 15px;
+      }
+
+      .phone-number {
+        text-align: right;
+        position: relative;
+        padding-right: 15px;
+        p {
+          font-size: 14px;
+          i {
+            font-size: 32px;
+          }
+        }
+      }
+
+      .cart {
+        text-align: right;
+        position: relative;
+        padding-right: 15px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    .top-bar {
+      .phone-hidden {
+        display: inline-block;
+        margin-left: 3px;
+      }
+
+      .text-left ul li {
+        margin-right: 1.5rem;
+        i {
+          margin-left: 5px;
+        }
+      }
+
+      .text-right ul li {
+        margin-left: 1.5rem;
+        i {
+          margin-right: 5px;
+        }
+      }
+      ul {
+        padding: 0 15px;
+      }
+    }
+    .company-claim {
+      .logo {
+        text-align: center;
+        position: relative;
+        padding: 0 15px;
+        width: 200px;
+      }
+
+      .phone-number {
+        text-align: left;
+        position: relative;
+        padding-left: 15px;
+        width: 200px;
+        p {
+          font-size: 17px;
+          i {
+            font-size: 32px;
+          }
+        }
+      }
+
+      .cart {
+        text-align: right;
+        position: relative;
+        padding-right: 15px;
+        width: 200px;
       }
     }
   }
