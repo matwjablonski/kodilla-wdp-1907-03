@@ -5,7 +5,19 @@ $footer-claim-bg: #2a2a2a;
 $footer-bg: #363636;
 
 $primary: #d58e32;
+$white: #fff;
 
 $text-color: #2a2a2a;
 
 $form-border-color: #292929;
+
+// TIMING VARIABLES (for transitions in mixins)
+
+$veryShortInterval: 0.3s;
+$shortInterval: 0.7s;
+
+// BREAKPOINTS (set according to bootstrap grid table -> https://getbootstrap.com/docs/4.0/layout/grid/)
+$bp-s: 576px;
+$bp-m: 768px;
+$bp-l: 992px;
+$bp-xl: 1200px;
