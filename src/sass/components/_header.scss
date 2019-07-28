@@ -16,6 +16,7 @@ header {
           font-size: 13px;
 
           &:hover {
+            @extend %hover-animation-time;
             color: $primary;
             text-decoration: none;
           }
@@ -104,6 +105,7 @@ header {
         }
 
         &:hover {
+          @extend %hover-animation-time;
           .cart-icon {
             background-color: lighten($primary, 10%);
           }
@@ -148,6 +150,7 @@ header {
 
             &:hover,
             &.active {
+              @extend %hover-animation-time;
               background-color: $primary;
               color: #ffffff;
               border-color: $primary;

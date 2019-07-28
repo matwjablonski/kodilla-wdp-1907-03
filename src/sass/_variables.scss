@@ -9,3 +9,11 @@ $primary: #d58e32;
 $text-color: #2a2a2a;
 
 $form-border-color: #292929;
+
+$background-color-animation-time: 250ms;
+$color-animation-time: 250ms;
+
+%hover-animation-time {
+  transition: background-color $background-color-animation-time;
+  transition: color $color-animation-time;
+}
