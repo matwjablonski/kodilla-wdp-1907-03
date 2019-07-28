@@ -1,23 +1,6 @@
 .post-box {
   margin-bottom: 2rem;
 
-  &-link {
-    color: $text-color;
-
-    &:hover {
-      text-decoration: none;
-      color: inherit;
-
-      .btn-post {
-        background: $primary;
-      }
-
-      h5 {
-        color: $primary !important;
-      }
-    }
-  }
-
   .cover {
     padding: 70% 25px 0 25px;
     background: {
@@ -67,6 +50,25 @@
     .more {
       text-align: center;
       padding-top: 30px;
+    }
+  }
+
+  &-link {
+    color: $text-color;
+
+    @include hover-only {
+      &:hover {
+        text-decoration: none;
+        color: inherit;
+
+        .btn-post {
+          background: $primary;
+        }
+
+        h5 {
+          color: $primary;
+        }
+      }
     }
   }
 }
