@@ -71,8 +71,5 @@
   }
   .price {
     display: flex;
-    &:empty {
-      visibility: hidden;
-    }
   }
 }
