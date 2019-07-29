@@ -168,32 +168,60 @@ header {
 
       .category {
         border-right: 1px solid $form-border-color;
+        position: relative;
         display: flex;
         align-items: center;
-        position: relative;
 
         i:first-child {
           color: $primary;
           position: absolute;
           left: 10px;
           z-index: 0;
+          top: 14px;
         }
 
         i:last-child {
           position: absolute;
           right: 10px;
           z-index: 0;
+          top: 14px;
         }
 
-        select {
-          -webkit-appearance: none;
-          border: 0;
-          background-color: transparent;
-          outline: none;
-          padding: 5px 30px 5px 35px;
+        .select-category {
+          padding: 0 40px;
           font-size: 14px;
-          position: relative;
-          z-index: 1;
+          list-style: none;
+          margin: 0;
+        }
+
+        .select-category-list {
+          width: 101%;
+          visibility: collapse;
+          position: absolute;
+          background-color: #fff;
+          padding: 0;
+          z-index: 2;
+          color: $text-color;
+          left: -1px;
+        }
+
+        &:hover .select-category-list {
+          display: block;
+          visibility: visible;
+          cursor: pointer;
+        }
+
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 12px;
+          list-style: none;
+
+          &:hover {
+            background-color: $primary;
+            color: #fff;
+          }
         }
       }
 
