@@ -8,6 +8,10 @@
 @import "fontawesome/brands";
 @import "fontawesome/regular";
 
+// MIXINS
+@import "mixins/fade";
+@import "mixins/hover-supported-devices";
+
 @import "components/header";
 @import "components/footer";
 
