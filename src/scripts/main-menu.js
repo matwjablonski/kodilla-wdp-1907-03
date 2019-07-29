@@ -1,8 +1,9 @@
 const menuBtn = document.getElementById('main-menu-btn');
+const mainMenu = document.getElementById('main-menu');
 
 function openMenu () {
-  document.querySelector('#main-menu').classList.toggle('show');
-  document.querySelector('#main-menu-btn').classList.toggle('active');
+  mainMenu.classList.toggle('show');
+  menuBtn.classList.toggle('active');
 }
 
 menuBtn && menuBtn.addEventListener('click', openMenu);
