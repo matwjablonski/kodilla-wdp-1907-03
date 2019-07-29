@@ -2,9 +2,11 @@
   @include fade-long;
   opacity: 0;
   display: none;
+
   &.show {
     opacity: 1;
   }
+
   &.fadeOut {
     opacity: 0;
   }
