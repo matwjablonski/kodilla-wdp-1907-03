@@ -66,6 +66,7 @@ header {
           display: flex;
           align-items: center;
           justify-content: center;
+          
           i {
             margin-right: 5px;
           }
@@ -221,8 +222,9 @@ header {
           padding-left: 15px;
         }
 
-        ul li {
+        li {
           margin-right: 15px;
+          
           i {
             margin-left: 5px;
           }
@@ -233,7 +235,8 @@ header {
         ul {
           padding-right: 15px;
         }
-        ul li {
+        
+        li {
           margin-left: 10px;
 
           i {
@@ -266,8 +269,10 @@ header {
         padding-right: 15px;
         order: 2;
         margin-bottom: 24px;
+        
         p {
           font-size: 14px;
+          
           i {
             font-size: 25px;
             margin-right: 3px;
@@ -306,6 +311,7 @@ header {
 
       .text-left ul li {
         margin-right: 1.5rem;
+        
         i {
           margin-left: 5px;
         }
@@ -313,6 +319,7 @@ header {
 
       .text-right ul li {
         margin-left: 1.5rem;
+        
         i {
           margin-right: 5px;
         }
@@ -322,6 +329,7 @@ header {
       }
     }
     .company-claim {
+      
       .center {
         align-items: center;
       }
@@ -338,8 +346,10 @@ header {
         position: relative;
         padding-left: 15px;
         width: 200px;
+        
         p {
           font-size: 17px;
+          
           i {
             font-size: 32px;
             vertical-align: middle;
@@ -353,6 +363,7 @@ header {
         position: relative;
         padding-right: 15px;
         width: 200px;
+        
         .cart-icon {
           width: 55px;
           height: 50px;
