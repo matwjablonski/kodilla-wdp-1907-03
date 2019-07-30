@@ -18,7 +18,6 @@
     }
 
     &:hover {
-      @extend %hover-animation-time;
       .product-box-btn-hover {
         visibility: visible;
         transform: translateY(0);
@@ -40,7 +39,7 @@
     color: $text-color;
 
     &:hover {
-      @extend %hover-animation-time;
+      @include fade-long;
       transform: scale(1.03);
     }
   }
