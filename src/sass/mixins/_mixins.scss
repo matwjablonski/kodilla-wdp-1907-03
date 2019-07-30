@@ -1,7 +1,0 @@
-@mixin hover-drop-down-menu {
-  &:hover {
-    background-color: $primary;
-    color: $white;
-    border-left: 4px solid $text-color;
-  }
-}
