@@ -222,12 +222,7 @@ header {
           align-items: center;
           padding: 12px;
           list-style: none;
-
-          &:hover {
-            background-color: $primary;
-            color: $white;
-            border-left: 4px solid $text-color;
-          }
+          @include hover-drop-down-menu;
         }
       }
 
