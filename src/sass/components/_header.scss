@@ -171,6 +171,7 @@ header {
         position: relative;
         display: flex;
         align-items: center;
+        width: 205px;
 
         i:first-child {
           color: $primary;
@@ -195,14 +196,17 @@ header {
         }
 
         .select-category-list {
-          width: 101%;
+          width: 206px;
           visibility: collapse;
           position: absolute;
-          background-color: #fff;
+          background-color: $white;
           padding: 0;
           z-index: 2;
           color: $text-color;
-          left: -1px;
+          left: -2px;
+          margin: 1px;
+          top: -62px;
+          box-shadow: 2px 3.464px 6px $header-box-shadow-color;
         }
 
         &:hover .select-category-list {
@@ -211,7 +215,7 @@ header {
           cursor: pointer;
         }
 
-        li {
+        .select-category-item {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -220,7 +224,8 @@ header {
 
           &:hover {
             background-color: $primary;
-            color: #fff;
+            color: $white;
+            border-left: 4px solid $text-color;
           }
         }
       }
