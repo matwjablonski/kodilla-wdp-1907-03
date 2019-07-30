@@ -2,8 +2,10 @@
   border: 1px solid #b6b6b6;
   text-align: center;
   margin-top: 40px;
+
   .icon {
     transform: translateY(-50%);
+
     i {
       width: 60px;
       height: 60px;
@@ -15,6 +17,7 @@
       align-items: center;
       border: 1px solid #b6b6b6;
     }
+
     &::before {
       content: "";
       border: 1px solid #b6b6b6;
@@ -29,25 +32,30 @@
       z-index: -1;
     }
   }
+
   .content {
     text-transform: uppercase;
     color: rgb(42, 42, 42);
     margin-top: -0.5rem;
     letter-spacing: 1px;
+
     h5 {
       font-weight: 600;
       margin: 0;
     }
+
     p {
       font-weight: 300;
     }
   }
+
   &.active {
     i {
       background-color: $primary;
       color: #ffffff;
       border-color: $primary;
     }
+
     .content {
       color: $primary;
     }
