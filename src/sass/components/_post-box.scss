@@ -31,9 +31,10 @@
 
   .post-info {
     padding: 25px;
+    margin-bottom: 2rem;
 
     h5 {
-      color: $primary;
+      color: $text-color;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
@@ -49,6 +50,25 @@
     .more {
       text-align: center;
       padding-top: 30px;
+    }
+  }
+
+  &-link {
+    color: $text-color;
+
+    @include hover-only {
+      &:hover {
+        text-decoration: none;
+        color: inherit;
+
+        .btn-post {
+          background: $primary;
+        }
+
+        h5 {
+          color: $primary;
+        }
+      }
     }
   }
 }

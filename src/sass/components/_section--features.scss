@@ -1,3 +1,11 @@
 .section--features {
   padding: 5rem 0;
+
+  &:nth-child(2) {
+    text-decoration: none;
+
+    &:hover a {
+      text-decoration: none;
+    }
+  }
 }
