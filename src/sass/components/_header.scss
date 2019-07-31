@@ -66,7 +66,7 @@ header {
           display: flex;
           align-items: center;
           justify-content: center;
-          
+
           i {
             margin-right: 5px;
           }
@@ -155,32 +155,66 @@ header {
 
       .category {
         border-right: 1px solid $form-border-color;
+        position: relative;
         display: flex;
         align-items: center;
-        position: relative;
+        width: 205px;
 
         i:first-child {
           color: $primary;
           position: absolute;
           left: 10px;
           z-index: 0;
+          top: 14px;
         }
 
         i:last-child {
           position: absolute;
           right: 10px;
           z-index: 0;
+          top: 14px;
         }
 
-        select {
-          -webkit-appearance: none;
-          border: 0;
-          background-color: transparent;
-          outline: none;
-          padding: 5px 30px 5px 35px;
+        .select-category {
+          padding: 0 40px;
           font-size: 14px;
-          position: relative;
-          z-index: 1;
+          list-style: none;
+          margin: 0;
+        }
+
+        .select-category-list {
+          width: 206px;
+          visibility: collapse;
+          position: absolute;
+          background-color: $white;
+          padding: 0;
+          z-index: 2;
+          color: $text-color;
+          left: -2px;
+          margin: 1px;
+          top: -70px;
+          box-shadow: 2px 3.464px 6px $header-box-shadow-color;
+        }
+
+        &:hover .select-category-list {
+          display: block;
+          visibility: visible;
+          cursor: pointer;
+        }
+
+        .select-category-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 12px;
+          list-style: none;
+          @include hover-only {
+            &:hover {
+              background-color: $primary;
+              color: $white;
+              border-left: 4px solid $text-color;
+            }
+          }
         }
       }
 
@@ -327,7 +361,7 @@ header {
 
         li {
           margin-right: 15px;
-          
+
           i {
             margin-left: 5px;
           }
@@ -338,7 +372,7 @@ header {
         ul {
           padding-right: 15px;
         }
-        
+
         li {
           margin-left: 10px;
 
@@ -372,10 +406,10 @@ header {
         padding-right: 15px;
         order: 2;
         margin-bottom: 24px;
-        
+
         p {
           font-size: 14px;
-          
+
           i {
             font-size: 25px;
             margin-right: 3px;
@@ -414,7 +448,7 @@ header {
 
       .text-left ul li {
         margin-right: 1.5rem;
-        
+
         i {
           margin-left: 5px;
         }
@@ -422,7 +456,7 @@ header {
 
       .text-right ul li {
         margin-left: 1.5rem;
-        
+
         i {
           margin-right: 5px;
         }
@@ -432,7 +466,6 @@ header {
       }
     }
     .company-claim {
-      
       .center {
         align-items: center;
       }
@@ -449,10 +482,10 @@ header {
         position: relative;
         padding-left: 15px;
         width: 200px;
-        
+
         p {
           font-size: 17px;
-          
+
           i {
             font-size: 32px;
             vertical-align: middle;
@@ -466,7 +499,7 @@ header {
         position: relative;
         padding-right: 15px;
         width: 200px;
-        
+
         .cart-icon {
           width: 55px;
           height: 50px;
