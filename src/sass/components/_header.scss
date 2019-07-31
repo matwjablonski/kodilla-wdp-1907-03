@@ -2,10 +2,15 @@ header {
   .top-bar {
     background-color: $header-topbar-bg;
 
+    .space-between {
+      justify-content: space-between;
+    }
+
     ul {
       list-style: none;
       margin: 0;
       padding: 0;
+      position: relative;
 
       li {
         display: inline-block;
@@ -22,26 +27,14 @@ header {
         }
       }
     }
-
-    .text-left ul li {
-      margin-right: 1.5rem;
-
-      i {
-        margin-left: 5px;
-      }
-    }
-
-    .text-right ul li {
-      margin-left: 1.5rem;
-
-      i {
-        margin-right: 5px;
-      }
-    }
   }
 
   .company-claim {
     background-color: $header-bg;
+
+    .space-between {
+      justify-content: space-between;
+    }
 
     .container > .row {
       height: 145px;
@@ -50,17 +43,13 @@ header {
     .phone-number {
       p {
         margin: 0;
-        font-size: 17px;
         line-height: 42px;
         color: rgb(216, 216, 216);
         font-weight: 500;
 
         i {
-          font-size: 32px;
           color: $primary;
-          vertical-align: middle;
           margin-top: -3px;
-          margin-right: 0.8rem;
         }
       }
     }
@@ -73,14 +62,11 @@ header {
 
         .cart-icon {
           background-color: $primary;
-          width: 55px;
-          height: 50px;
           border-radius: 3px;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 20px;
-
+          
           i {
             margin-right: 5px;
           }
@@ -218,6 +204,174 @@ header {
           border: 0;
           background-color: transparent;
           outline: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    .top-bar {
+      .phone-hidden {
+        display: none;
+      }
+
+      .text-left {
+        ul {
+          padding-left: 15px;
+        }
+
+        li {
+          margin-right: 15px;
+          
+          i {
+            margin-left: 5px;
+          }
+        }
+      }
+
+      .text-right {
+        ul {
+          padding-right: 15px;
+        }
+        
+        li {
+          margin-left: 10px;
+
+          i {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    .company-claim {
+      position: relative;
+      .center {
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        align-items: center;
+        justify-content: flex-start;
+        display: flex;
+        padding-left: 15px;
+        order: 1;
+        img {
+          width: 90%;
+        }
+      }
+
+      .phone-number {
+        align-items: flex-end;
+        justify-content: flex-end;
+        display: flex;
+        padding-right: 15px;
+        order: 2;
+        margin-bottom: 24px;
+        
+        p {
+          font-size: 14px;
+          
+          i {
+            font-size: 25px;
+            margin-right: 3px;
+          }
+        }
+      }
+
+      .cart {
+        text-align: center;
+        position: absolute;
+        display: inline-block;
+        right: 15px;
+        order: 2;
+        top: 34px;
+        .cart-icon {
+          width: 45px;
+          height: 40px;
+          font-size: 18px;
+
+          i {
+            margin-right: 7px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    .top-bar {
+      .phone-hidden {
+        display: inline-block;
+        margin-left: 3px;
+      }
+
+      .text-left ul li {
+        margin-right: 1.5rem;
+        
+        i {
+          margin-left: 5px;
+        }
+      }
+
+      .text-right ul li {
+        margin-left: 1.5rem;
+        
+        i {
+          margin-right: 5px;
+        }
+      }
+      ul {
+        padding: 0 15px;
+      }
+    }
+    .company-claim {
+      
+      .center {
+        align-items: center;
+      }
+
+      .logo {
+        text-align: center;
+        position: relative;
+        padding: 0 15px;
+        width: 200px;
+      }
+
+      .phone-number {
+        text-align: left;
+        position: relative;
+        padding-left: 15px;
+        width: 200px;
+        
+        p {
+          font-size: 17px;
+          
+          i {
+            font-size: 32px;
+            vertical-align: middle;
+            margin-right: 0.8rem;
+          }
+        }
+      }
+
+      .cart {
+        text-align: right;
+        position: relative;
+        padding-right: 15px;
+        width: 200px;
+        
+        .cart-icon {
+          width: 55px;
+          height: 50px;
+          font-size: 20px;
+
+          i {
+            margin-right: 5px;
+          }
         }
       }
     }
