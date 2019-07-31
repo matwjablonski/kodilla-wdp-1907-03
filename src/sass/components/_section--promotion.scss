@@ -1,0 +1,30 @@
+.section-promotion {
+  padding: 0 0 5rem;
+  .boxes {
+    height: 420px;
+
+    .box-overlay {
+      background: grey;
+      height: 100%;
+      width: 100%;
+    }
+
+    .smaller-box {
+      background-color: lightblue;
+      height: 195px;
+    }
+
+    .smaller-box-above {
+      margin-bottom: 30px;
+    }
+
+    .smaller-box-below {
+      background-color: lightpink;
+    }
+
+    .fit-flex {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
