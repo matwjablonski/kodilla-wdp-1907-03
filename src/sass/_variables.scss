@@ -1,5 +1,6 @@
 $header-topbar-bg: #864343;
 $header-bg: #723636;
+$header-box-shadow-color: rgba(1, 2, 2, 0.2);
 
 $footer-claim-bg: #2a2a2a;
 $footer-bg: #363636;
@@ -15,3 +16,9 @@ $form-border-color: #292929;
 
 $veryShortInterval: 0.3s;
 $shortInterval: 0.7s;
+
+// BREAKPOINTS (set according to bootstrap grid table -> https://getbootstrap.com/docs/4.0/layout/grid/)
+$bp-s: 576px;
+$bp-m: 768px;
+$bp-l: 992px;
+$bp-xl: 1200px;
