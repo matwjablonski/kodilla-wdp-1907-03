@@ -11,43 +11,42 @@
       display: flex;
       justify-content: flex-end;
       flex-direction: column;
-      background: rgba(42, 42, 42, 0.4);
+      background: $promotion-box-overlay-color;
       color: $white;
       height: 100%;
       width: 100%;
-      padding: 0 0 40px 40px;
+      padding: 40px;
 
       .box-one-first-line {
         font-size: 30px;
         font-weight: bold;
-        padding-bottom: 0;
         margin: 0;
+        line-height: 0.9;
       }
 
       .box-one-second-line {
         font-size: 50px;
         font-weight: bold;
-        padding-bottom: 0;
         margin: 0;
       }
 
       .box-one-third-line {
         font-size: 40px;
         font-weight: bold;
-        padding: 5px 0;
         margin: 0;
         width: 130px;
         display: flex;
         justify-content: center;
-        border: 5px solid $white;
+        border: 4px solid $white;
       }
     }
   }
 
   .smaller-box-above {
-    background-color: #e8edf7;
+    background-color: $promotion-smaller-box-above-color;
     height: 195px;
     margin-bottom: 30px;
+
     .inbox-item-left {
       height: 100%;
       width: 35%;
@@ -95,8 +94,15 @@
   }
 
   .smaller-box-below {
-    background-color: #fbf3f7;
+    background-color: $promotion-smaller-box-below-color;
     height: 195px;
+
+    .inbox-item-small-left {
+      background-image: url("../images/bed-2.png");
+      background-size: 340px;
+      background-position: 270px 8px;
+    }
+
     .inbox-item-small {
       width: 100%;
       height: 100%;
@@ -104,7 +110,6 @@
       justify-content: center;
       flex-direction: column;
       align-items: flex-end;
-      flex: 3;
 
       .box-three-first-line {
         font-size: 23px;
@@ -123,28 +128,22 @@
       }
     }
   }
+}
 
-  .fit-flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    color: $text-color;
-  }
+.fit-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: $text-color;
+}
 
-  .inbox-item {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
+.inbox-item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
-  .inbox-item-small-left {
-    flex: 2;
-    background-image: url("../images/bed-2.png");
-    background-size: 340px;
-    background-position: 270px 8px;
-  }
-  .boxes {
-    height: 420px;
-  }
+.boxes {
+  height: 420px;
 }
