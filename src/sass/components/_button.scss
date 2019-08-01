@@ -48,6 +48,7 @@
   color: $primary;
   font-size: 13px;
   line-height: 22px;
+  background-color: $white;
   @include hover-only {
     background-color: $footer-claim-bg;
     border-color: $footer-claim-bg;
