@@ -155,66 +155,32 @@ header {
 
       .category {
         border-right: 1px solid $form-border-color;
-        position: relative;
         display: flex;
         align-items: center;
-        width: 205px;
+        position: relative;
 
         i:first-child {
           color: $primary;
           position: absolute;
           left: 10px;
           z-index: 0;
-          top: 14px;
         }
 
         i:last-child {
           position: absolute;
           right: 10px;
           z-index: 0;
-          top: 14px;
         }
 
-        .select-category {
-          padding: 0 40px;
+        select {
+          -webkit-appearance: none;
+          border: 0;
+          background-color: transparent;
+          outline: none;
+          padding: 5px 30px 5px 35px;
           font-size: 14px;
-          list-style: none;
-          margin: 0;
-        }
-
-        .select-category-list {
-          width: 206px;
-          visibility: collapse;
-          position: absolute;
-          background-color: $white;
-          padding: 0;
-          z-index: 2;
-          color: $text-color;
-          left: -2px;
-          margin: 1px;
-          top: -70px;
-          box-shadow: 2px 3.464px 6px $header-box-shadow-color;
-        }
-
-        &:hover .select-category-list {
-          display: block;
-          visibility: visible;
-          cursor: pointer;
-        }
-
-        .select-category-item {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 12px;
-          list-style: none;
-          @include hover-only {
-            &:hover {
-              background-color: $primary;
-              color: $white;
-              border-left: 4px solid $text-color;
-            }
-          }
+          position: relative;
+          z-index: 1;
         }
       }
 
