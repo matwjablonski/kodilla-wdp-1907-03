@@ -1,4 +1,7 @@
-let filterValue = 'table';
+import { carouselNewFurniture } from './carousel-new-furniture';
+
+let filterValue = 'bed';
+const filteredOutput = document.getElementById('filtered-list-output');
 
 function clearTabs () {
   document.querySelectorAll('.tab-trigger').forEach(tab => {
@@ -13,10 +16,23 @@ function initFilter () {
 }
 
 function showList (cat) {
+  filteredOutput.innerHTML = '';
+  let catCopy = cat.cloneNode(true);
+  filteredOutput.insertAdjacentElement('afterbegin', catCopy);
+  let newCat = filteredOutput.children[0];
+  newCat.style.display = 'block';
+  let carouselTiles = Array.from(newCat.children[0].children[0].children[0].children);
+  let newClassList = carouselTiles[0].className + ' carousel-tile';
+  carouselTiles.forEach(tile => {
+    tile.className = newClassList;
+  });
+
   setTimeout(function () {
-    cat.style.display = 'block';
     setTimeout(function () {
-      cat.classList.add('show');
+      newCat.classList.add('show');
+      setTimeout(function () {
+        carouselNewFurniture();
+      }, 20);
     }, 10);
   }, 301);
 }
