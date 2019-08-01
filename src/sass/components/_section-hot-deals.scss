@@ -103,4 +103,106 @@
       }
     }
   }
+
+  .banner {
+    height: 500px;
+    width: 100%;
+    background-color: $white;
+    position: relative;
+    text-transform: uppercase;
+
+    .slogan {
+      background-color: rgba(54, 54, 54, 0.5);
+      color: $white;
+      height: 212px;
+      width: 100%;
+      position: absolute;
+      top: 144px;
+      left: 0;
+
+      .title {
+        font-size: 54px;
+        text-align: center;
+        line-height: 70px;
+        margin-top: 60px;
+
+        .word1 {
+          font-weight: 200;
+          display: inline-block;
+        }
+
+        .word2 {
+          font-weight: 500;
+          display: inline-block;
+        }
+      }
+
+      .postscript {
+        font-size: 24px;
+        font-weight: 300;
+        text-align: center;
+      }
+    }
+
+    .slide-down {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: 30px;
+      font-weight: 600;
+      height: 40px;
+      margin: 0;
+
+      .down-button {
+        height: 40px;
+        width: 50%;
+        text-align: center;
+        display: inline-block;
+        background-color: $text-color;
+        color: $white;
+        line-height: 40px;
+        margin: 0;
+        &:hover {
+          background-color: $primary;
+        }
+      }
+
+      .previous {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      .next {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    .button-shop-now {
+      background-color: $white;
+      color: $text-color;
+      height: 54px;
+      line-height: 54px;
+      width: 134px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-block;
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+
+    .center-warpper {
+      position: absolute;
+      top: 330px;
+      left: 0px;
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
