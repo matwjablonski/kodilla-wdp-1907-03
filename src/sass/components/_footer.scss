@@ -1,3 +1,8 @@
+%hover-animation-time {
+  transition: background-color $background-color-animation-time;
+  transition: color $color-animation-time;
+}
+
 footer {
   .footer-menu {
     background-color: $footer-bg;
@@ -19,9 +24,9 @@ footer {
             font-size: 14px;
             line-height: 30px;
             color: rgb(169, 169, 169);
+            @extend %hover-animation-time;
 
-            &:hover {
-              @extend %hover-animation-time;
+            @include hover-only {
               color: #ffffff;
             }
           }
@@ -69,14 +74,34 @@ footer {
           a {
             color: rgb(169, 169, 169);
             text-decoration: none;
+            @extend %hover-animation-time;
 
-            &:hover {
-              @extend %hover-animation-time;
+            @include hover-only {
               color: $primary;
             }
           }
         }
       }
     }
+  }
+}
+
+@include media-breakpoint-only(xs) {
+  .menu-wrapper {
+    text-align: center;
+
+    img {
+      margin: auto;
+    }
+  }
+
+  .socialmedia {
+    text-align: center;
+  }
+}
+
+@include media-breakpoint-only(sm) {
+  .menu-wrapper {
+    text-align: center;
   }
 }

@@ -1,13 +1,23 @@
+%hover-animation-time {
+  transition: background-color $background-color-animation-time;
+  transition: color $color-animation-time;
+}
+
 .product-box {
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
+  @extend %hover-animation-time;
 
   .product-box-btn-hover {
-    @include fade;
+    @extend %hover-animation-time;
     visibility: visible;
     transform: translateY(0);
     opacity: 1;
+  }
+
+  .product-box-btn-price {
+    @extend %hover-animation-time;
   }
 
   @include hover-only {
@@ -27,19 +37,17 @@
       .product-box-btn-price {
         background-color: $text-color;
         color: $white;
-        @include fade-long;
       }
       cursor: pointer;
     }
   }
 
   .product-box-btn-price {
-    @include fade;
+    @extend %hover-animation-time;
     background-color: white;
     color: $text-color;
 
-    &:hover {
-      @include fade-long;
+    @include hover-only {
       transform: scale(1.03);
     }
   }
@@ -56,6 +64,13 @@
     overflow: hidden;
     align-items: flex-end;
 
+    .furniture-photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
     .sale {
       position: absolute;
       top: -30px;
@@ -70,6 +85,7 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      position: relative;
     }
   }
 

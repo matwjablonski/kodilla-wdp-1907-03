@@ -5,6 +5,7 @@
     text-decoration: none;
 
     &:hover a {
+      @extend %hover-animation-time;
       text-decoration: none;
     }
   }

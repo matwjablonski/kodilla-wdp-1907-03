@@ -1,3 +1,8 @@
+%hover-animation-time {
+  transition: background-color $background-color-animation-time;
+  transition: color $color-animation-time;
+}
+
 .feature-box {
   border: 1px solid #b6b6b6;
   text-align: center;
@@ -17,6 +22,7 @@
       justify-content: center;
       align-items: center;
       border: 1px solid #b6b6b6;
+      @extend %hover-animation-time;
     }
 
     &::before {
@@ -39,6 +45,7 @@
     color: rgb(42, 42, 42);
     margin-top: -0.5rem;
     letter-spacing: 1px;
+    @extend %hover-animation-time;
 
     h5 {
       font-weight: 600;
@@ -50,7 +57,7 @@
     }
   }
 
-  &:hover {
+  @include hover-only {
     i {
       background-color: $primary;
       color: #ffffff;
@@ -60,5 +67,11 @@
     .content {
       color: $primary;
     }
+  }
+}
+
+@include media-breakpoint-only(xs) {
+  .feature-box {
+    height: 70%;
   }
 }

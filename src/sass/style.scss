@@ -13,6 +13,7 @@
 // MIXINS
 @import "mixins/fade";
 @import "mixins/hover-supported-devices";
+@import "mixins/breakpoints";
 
 @import "components/header";
 @import "components/footer";

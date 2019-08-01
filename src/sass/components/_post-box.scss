@@ -1,12 +1,25 @@
+%hover-animation-time {
+  transition: background-color $background-color-animation-time;
+  transition: color $color-animation-time;
+}
+
 .post-box {
   margin-bottom: 2rem;
+  overflow: hidden;
 
   .cover {
     padding: 70% 25px 0 25px;
+    position: relative;
     background: {
-      color: #f4f5f7;
       size: cover;
       position: center;
+    }
+
+    .blog-photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
     }
 
     .details {
@@ -14,6 +27,7 @@
       display: flex;
       background-color: #ffffff;
       font-size: 14px;
+      position: relative;
 
       & > * {
         flex: 1 1 auto;
@@ -55,19 +69,18 @@
 
   &-link {
     color: $text-color;
+    @extend %hover-animation-time;
 
     @include hover-only {
-      &:hover {
-        text-decoration: none;
-        color: inherit;
+      text-decoration: none;
+      color: inherit;
 
-        .btn-post {
-          background: $primary;
-        }
+      .btn-post {
+        background: $primary;
+      }
 
-        h5 {
-          color: $primary;
-        }
+      h5 {
+        color: $primary;
       }
     }
   }

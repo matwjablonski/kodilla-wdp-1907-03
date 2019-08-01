@@ -1,5 +1,10 @@
+%hover-animation-time {
+  transition: background-color $background-color-animation-time;
+  transition: color $color-animation-time;
+}
+
 .new-furniture-list {
-  @include fade-long;
+  @extend %hover-animation-time;
   opacity: 0;
   display: none;
 
