@@ -11,6 +11,11 @@ $white: #fff;
 $text-color: #2a2a2a;
 
 $form-border-color: #292929;
+$promotion-overlay-color: rgba(42, 42, 42, 0.3);
+$promotion-primary-color: #e8edf7;
+$promotion-secondary-color: #fbf3f7;
+
+// TIMING VARIABLES (for transitions in mixins)
 
 $background-color-animation-time: 250ms;
 $color-animation-time: 250ms;
