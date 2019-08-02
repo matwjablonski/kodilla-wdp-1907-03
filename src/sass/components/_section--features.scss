@@ -1,11 +1,14 @@
 .section--features {
   padding: 5rem 0;
 
+  a {
+    @extend %hover-animation-time;
+  }
+
   &:nth-child(2) {
     text-decoration: none;
 
     &:hover a {
-      @extend %hover-animation-time;
       text-decoration: none;
     }
   }

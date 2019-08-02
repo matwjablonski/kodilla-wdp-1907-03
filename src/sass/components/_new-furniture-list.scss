@@ -1,8 +1,3 @@
-%hover-animation-time {
-  transition: background-color $background-color-animation-time;
-  transition: color $color-animation-time;
-}
-
 .new-furniture-list {
   @extend %hover-animation-time;
   opacity: 0;

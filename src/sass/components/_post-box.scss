@@ -1,8 +1,3 @@
-%hover-animation-time {
-  transition: background-color $background-color-animation-time;
-  transition: color $color-animation-time;
-}
-
 .post-box {
   margin-bottom: 2rem;
   overflow: hidden;
@@ -72,15 +67,17 @@
     @extend %hover-animation-time;
 
     @include hover-only {
-      text-decoration: none;
-      color: inherit;
+      &:hover {
+        text-decoration: none;
+        color: inherit;
 
-      .btn-post {
-        background: $primary;
-      }
+        .btn-post {
+          background: $primary;
+        }
 
-      h5 {
-        color: $primary;
+        h5 {
+          color: $primary;
+        }
       }
     }
   }

@@ -58,14 +58,16 @@
   }
 
   @include hover-only {
-    i {
-      background-color: $primary;
-      color: #ffffff;
-      border-color: $primary;
-    }
+    &:hover {
+      i {
+        background-color: $primary;
+        color: #ffffff;
+        border-color: $primary;
+      }
 
-    .content {
-      color: $primary;
+      .content {
+        color: $primary;
+      }
     }
   }
 }

@@ -1,8 +1,3 @@
-%hover-animation-time {
-  transition: background-color $background-color-animation-time;
-  transition: color $color-animation-time;
-}
-
 .product-box {
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
@@ -20,13 +15,13 @@
     @extend %hover-animation-time;
   }
 
-  @include hover-only {
-    .product-box-btn-hover {
-      visibility: hidden;
-      transform: translateY(10px);
-      opacity: 0;
-    }
+  .product-box-btn-hover {
+    visibility: hidden;
+    transform: translateY(10px);
+    opacity: 0;
+  }
 
+  @include hover-only {
     &:hover {
       .product-box-btn-hover {
         visibility: visible;

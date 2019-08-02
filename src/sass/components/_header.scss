@@ -1,8 +1,3 @@
-%hover-animation-time {
-  transition: background-color $background-color-animation-time;
-  transition: color $color-animation-time;
-}
-
 header {
   .top-bar {
     background-color: $header-topbar-bg;
@@ -27,8 +22,10 @@ header {
           @extend %hover-animation-time;
 
           @include hover-only {
-            color: $primary;
-            text-decoration: none;
+            &:hover {
+              color: $primary;
+              text-decoration: none;
+            }
           }
         }
       }
@@ -97,8 +94,10 @@ header {
         }
 
         @include hover-only {
-          .cart-icon {
-            background-color: lighten($primary, 10%);
+          &:hover {
+            .cart-icon {
+              background-color: lighten($primary, 10%);
+            }
           }
         }
       }
