@@ -6,6 +6,9 @@
     background-image: url("../images/whiteSofa.jpg");
     background-size: cover;
     background-position: center;
+    @include small {
+      margin-bottom: 32px;
+    }
 
     .box-overlay {
       display: flex;
@@ -47,6 +50,9 @@
     background-color: $promotion-primary-color;
     height: 195px;
     margin-bottom: 30px;
+    @include small {
+      margin-bottom: 32px;
+    }
 
     .inbox-item-left {
       height: 100%;
@@ -63,6 +69,9 @@
       padding: 0 20px;
       min-width: 120px;
       text-transform: uppercase;
+      @include large {
+        padding-left: 35px;
+      }
 
       .box-two-first-line {
         font-size: 25px;
@@ -116,6 +125,9 @@
       flex-direction: column;
       align-items: flex-end;
       text-transform: uppercase;
+      @include large {
+        padding: 20px;
+      }
 
       .box-three-first-line {
         font-size: 23px;
