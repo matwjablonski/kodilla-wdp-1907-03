@@ -1,16 +1,18 @@
 .btn-main {
-  background-color: #2a2a2a;
-  color: #ffffff;
+  background-color: $footer-claim-bg;
+  color: $white;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
+  @extend %hover-animation-time;
 
-  &:not(.no-hover):hover {
-    @extend %hover-animation-time;
-    color: #ffffff !important;
-    background-color: $primary;
-    text-decoration: none;
+  @include hover-only {
+    &:not(.no-hover):hover {
+      color: $white;
+      background-color: $primary;
+      text-decoration: none;
+    }
   }
 }
 
@@ -26,14 +28,33 @@
 .btn-outline {
   display: inline-block;
   padding: 5px 10px;
-  border: 1px solid #2a2a2a;
-  color: #2a2a2a;
+  border: 1px solid $footer-claim-bg;
+  color: $footer-claim-bg;
   font-size: 13px;
   line-height: 22px;
+  @extend %hover-animation-time;
 
-  &:hover {
-    @extend %hover-animation-time;
-    background-color: #2a2a2a;
-    color: #ffffff;
+  @include hover-only {
+    background-color: $footer-claim-bg;
+    color: $white;
+  }
+
+  &:active {
+    color: $primary;
+  }
+}
+
+.btn-active {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid $primary;
+  color: $primary;
+  font-size: 13px;
+  line-height: 22px;
+  @extend %hover-animation-time;
+  
+  @include hover-only {
+    background-color: $footer-claim-bg;
+    border-color: $footer-claim-bg;
   }
 }

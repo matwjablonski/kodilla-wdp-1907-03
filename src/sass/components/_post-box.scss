@@ -1,12 +1,20 @@
 .post-box {
   margin-bottom: 2rem;
+  overflow: hidden;
 
   .cover {
     padding: 70% 25px 0 25px;
+    position: relative;
     background: {
-      color: #f4f5f7;
       size: cover;
       position: center;
+    }
+
+    .blog-photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
     }
 
     .details {
@@ -14,6 +22,7 @@
       display: flex;
       background-color: #ffffff;
       font-size: 14px;
+      position: relative;
 
       & > * {
         flex: 1 1 auto;

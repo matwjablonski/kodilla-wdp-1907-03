@@ -62,3 +62,9 @@
     }
   }
 }
+
+@include media-breakpoint-only(xs) {
+  .feature-box {
+    height: 70%;
+  }
+}

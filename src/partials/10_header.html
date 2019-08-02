@@ -1,8 +1,8 @@
 <header>
   <div class="top-bar">
     <div class="container">
-      <div class="row">
-        <div class="col text-left">
+      <div class="row space-between">
+        <div class="text-left">
           <ul>
             <li>
               <a href="#">USD <i class="fas fa-caret-down"></i></a>
@@ -15,13 +15,19 @@
             </li>
           </ul>
         </div>
-        <div class="col text-right">
+        <div class="text-right">
           <ul>
             <li>
-              <a href="#"><i class="fas fa-user"></i> Login</a>
+              <a href="#"
+                ><i class="fas fa-user"></i>
+                <div class="phone-hidden">Login</div></a
+              >
             </li>
             <li>
-              <a href="#"><i class="fas fa-lock"></i> Register</a>
+              <a href="#"
+                ><i class="fas fa-lock"></i>
+                <div class="phone-hidden">Register</div></a
+              >
             </li>
             <li>
               <a href="#"><i class="fas fa-bars"></i></a>
@@ -33,14 +39,14 @@
   </div>
   <div class="company-claim">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col text-left phone-number">
-          <p><i class="fas fa-mobile-alt"></i> 2345 - 3560 - 222</p>
+      <div class="row center space-between">
+        <div class="phone-number">
+          <p><i class="fas fa-mobile-alt"></i> 2345 3560 222</p>
         </div>
-        <div class="col text-center">
+        <div class="logo">
           <a href="#"><img src="./images/logo.png"/></a>
         </div>
-        <div class="col text-right cart">
+        <div class="cart">
           <a href="#" class="cart-box">
             <div class="cart-icon"><i class="fas fa-shopping-basket"></i></div>
             <div class="cart-counter">0</div>
@@ -52,30 +58,45 @@
   <div class="menu-bar">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col">
+        <div class="col menu-search-bar">
           <form action="" class="search-form">
             <div class="category">
-              <i class="fas fa-list-ul"></i>
-              <select name="" id="">
-                <option value="">Select a category</option>
-              </select>
-              <i class="fas fa-caret-down"></i>
+              <ul class="select-category">
+                <li>
+                  <i class="fas fa-list-ul"></i> <span>Select a category</span>
+                  <ul class="select-category-list">
+                    <li class="select-category-item">Category 1</li>
+                    <li class="select-category-item">Category 2</li>
+                    <li class="select-category-item">Category 3</li>
+                    <li class="select-category-item">Category 4</li>
+                    <li class="select-category-item">Category 5</li>
+                  </ul>
+                  <i class="fas fa-caret-down"></i>
+                </li>
+              </ul>
             </div>
             <div class="search-field">
               <input placeholder="Search products..." type="text" />
               <button><i class="fa fa-search"></i></button>
             </div>
           </form>
+          <div class="main-menu-btn-container">
+            <button class="main-menu-btn" id="main-menu-btn">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
         </div>
-        <div class="col-auto menu">
-          <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Furniture</a></li>
-            <li><a href="#">Chair</a></li>
-            <li><a href="#">Table</a></li>
-            <li><a href="#">Sofa</a></li>
-            <li><a href="#">Bedroom</a></li>
-            <li><a href="#">Blog</a></li>
+        <div class="col-auto menu menu-list-container" id="main-menu">
+          <ul class="menu-list">
+            <li class="menu-list-item">
+              <a href="#" class="menu-link active">Home</a>
+            </li>
+            <li class="menu-list-item"><a href="#" class="menu-link">Furniture</a></li>
+            <li class="menu-list-item"><a href="#" class="menu-link">Chair</a></li>
+            <li class="menu-list-item"><a href="#" class="menu-link">Table</a></li>
+            <li class="menu-list-item"><a href="#" class="menu-link">Sofa</a></li>
+            <li class="menu-list-item"><a href="#" class="menu-link">Bedroom</a></li>
+            <li class="menu-list-item"><a href="#" class="menu-link">Blog</a></li>
           </ul>
         </div>
       </div>

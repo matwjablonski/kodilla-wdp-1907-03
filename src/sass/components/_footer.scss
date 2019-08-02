@@ -80,3 +80,23 @@ footer {
     }
   }
 }
+
+@include media-breakpoint-only(xs) {
+  .menu-wrapper {
+    text-align: center;
+
+    img {
+      margin: auto;
+    }
+  }
+
+  .socialmedia {
+    text-align: center;
+  }
+}
+
+@include media-breakpoint-only(sm) {
+  .menu-wrapper {
+    text-align: center;
+  }
+}
