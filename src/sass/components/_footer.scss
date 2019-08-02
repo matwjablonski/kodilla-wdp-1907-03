@@ -23,7 +23,7 @@ footer {
 
             @include hover-only {
               &:hover {
-                color: #ffffff;
+                color: $white;
               }
             }
           }
@@ -52,7 +52,7 @@ footer {
     .copyright {
       p {
         margin: 0;
-        color: rgb(169, 169, 169);
+        color: $footer-icon;
         font-size: 14px;
         line-height: 26px;
       }
@@ -69,7 +69,7 @@ footer {
           margin-left: 1rem;
 
           a {
-            color: rgb(169, 169, 169);
+            color: $footer-icon;
             text-decoration: none;
             @extend %hover-animation-time;
 
