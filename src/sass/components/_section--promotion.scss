@@ -6,6 +6,7 @@
     background-image: url("../images/whiteSofa.jpg");
     background-size: cover;
     background-position: center;
+
     @include small {
       margin-bottom: 32px;
     }
@@ -50,6 +51,7 @@
     background-color: $promotion-primary-color;
     height: 195px;
     margin-bottom: 30px;
+
     @include small {
       margin-bottom: 32px;
     }
@@ -69,6 +71,7 @@
       padding: 0 20px;
       min-width: 120px;
       text-transform: uppercase;
+
       @include large {
         padding-left: 35px;
       }
@@ -125,6 +128,7 @@
       flex-direction: column;
       align-items: flex-end;
       text-transform: uppercase;
+
       @include large {
         padding: 20px;
       }

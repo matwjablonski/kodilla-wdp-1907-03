@@ -1,20 +1,17 @@
-//max-width: 575px
 @mixin phones {
-  @media (max-width: $bp-s - 1) {
+  @media (max-width: $bp-s) {
     @content;
   }
 }
 
-//min-width: 576px and max-width: 1199px
 @mixin tablets {
-  @media (min-width: $bp-s) and (max-width: $bp-xl - 1) {
+  @media (min-width: $bp-s + 1) and (max-width: $bp-xl) {
     @content;
   }
 }
 
-//min-width: 1200px
 @mixin desktops {
-  @media (min-width: $bp-xl) {
+  @media (min-width: $bp-xl + 1) {
     @content;
   }
 }
