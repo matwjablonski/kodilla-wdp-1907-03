@@ -2,6 +2,7 @@ import { carouselNewFurniture } from './carousel-new-furniture';
 
 let filterValue = 'bed';
 const filteredOutput = document.getElementById('filtered-list-output');
+const animationOffset = 300;
 
 function clearTabs () {
   document.querySelectorAll('.tab-trigger').forEach(tab => {
@@ -17,24 +18,21 @@ function initFilter () {
 
 function showList (cat) {
   filteredOutput.innerHTML = '';
-  let catCopy = cat.cloneNode(true);
+  const catCopy = cat.cloneNode(true);
   filteredOutput.insertAdjacentElement('afterbegin', catCopy);
-  let newCat = filteredOutput.children[0];
+  const newCat = filteredOutput.children[0];
   newCat.style.display = 'block';
-  let carouselTiles = Array.from(newCat.children[0].children[0].children[0].children);
-  let newClassList = carouselTiles[0].className + ' carousel-tile';
+  newCat.classList.add('active-furniture-list');
+  const carouselTiles = document.querySelectorAll(
+    '.active-furniture-list .new-furniture-item'
+  );
   carouselTiles.forEach(tile => {
-    tile.className = newClassList;
+    tile.classList.add('carousel-tile');
   });
-
   setTimeout(function () {
-    setTimeout(function () {
-      newCat.classList.add('show');
-      setTimeout(function () {
-        carouselNewFurniture();
-      }, 20);
-    }, 10);
-  }, 301);
+    newCat.classList.add('show');
+  }, animationOffset);
+  carouselNewFurniture();
 }
 
 function hideList (cat) {
@@ -43,7 +41,7 @@ function hideList (cat) {
   }, 10);
   setTimeout(function () {
     cat.style.display = 'none';
-  }, 300);
+  }, animationOffset);
 }
 
 function listToggle () {
@@ -53,7 +51,7 @@ function listToggle () {
   document.querySelector('.dots').style.opacity = 0;
   setTimeout(function () {
     document.querySelector('.dots').style.opacity = 1;
-  }, 300);
+  }, animationOffset);
 }
 
 function activeTab (item) {

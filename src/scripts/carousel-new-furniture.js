@@ -3,6 +3,8 @@ export function carouselNewFurniture () {
   const tileBox = document.querySelector('.carousel-box');
   const tiles = document.querySelectorAll('.carousel-tile');
   const pagination = document.getElementById('carousel-pagination');
+  const animationOffset = 300;
+  const requiredMoveOffsetToTrigger = 100;
 
   let offsetX = 0;
   let startPos = 0;
@@ -24,7 +26,7 @@ export function carouselNewFurniture () {
       tileBox.style.transform = `translateX(0)`;
       counter = 1;
       createPaginationBtns();
-    }, 500);
+    }, animationOffset);
   });
 
   function fadeInListFix () {
@@ -35,7 +37,7 @@ export function carouselNewFurniture () {
       tileBox.style.transform = `translateX(0)`;
       counter = 1;
       createPaginationBtns();
-    }, 400);
+    }, animationOffset);
   }
 
   fadeInListFix();
@@ -44,6 +46,7 @@ export function carouselNewFurniture () {
     let itemsInRow = carouselContainer.clientWidth / tileWidth;
     return Math.round(itemsInRow);
   }
+
   function evalMaxScreens () {
     let maxScreens = Math.floor(tilesQ / evalTilesInRow());
     if (evalTilesInRow() < tilesQ / maxScreens) {
@@ -61,8 +64,8 @@ export function carouselNewFurniture () {
     pagination.innerHTML = '';
     for (let i = 1; i < maxScreens + 1; i++) {
       if (i <= maxScreens) {
-        let dot = document.createElement('li');
-        let dotLink = document.createElement('a');
+        const dot = document.createElement('li');
+        const dotLink = document.createElement('a');
         dot.appendChild(dotLink);
         dot.setAttribute('class', 'carousel-slide-number-btn');
         dot.dataset.slideNumber = i;
@@ -71,11 +74,11 @@ export function carouselNewFurniture () {
     }
     const slideNumberBtns = document.querySelectorAll('.carousel-slide-number-btn');
     slideNumberBtns.forEach(btn => {
-      let slideNumber = btn.dataset.slideNumber;
+      const slideNumber = btn.dataset.slideNumber;
       slideNumberBtns[0].children[0].classList.add('active');
       btn.addEventListener('click', function (e) {
-        slideNumberBtns.forEach(x => {
-          x.children[0].classList.remove('active');
+        slideNumberBtns.forEach(btn => {
+          btn.children[0].classList.remove('active');
         });
         btn.children[0].classList.add('active');
         e.preventDefault();
@@ -100,31 +103,52 @@ export function carouselNewFurniture () {
       (counter - 1)}%)`;
     activeSlide(counter);
   }
+
   function prevSlide () {
     if (counter > 1) {
-      counter--;
+      counter = counter - 1;
       tileBox.style.transform = `translateX(${-carouselTransitionXPercentage *
         (counter - 1)}%)`;
       activeSlide(counter);
 
       setTimeout(function () {
         carouselContainerPositionReset();
-      }, 300);
+      }, animationOffset);
     } else {
       carouselContainerPositionReset();
     }
   }
+
   function nextSlide () {
     if (counter < maxScreens) {
       tileBox.style.transform = `translateX(${-carouselTransitionXPercentage *
         counter}%)`;
-      counter++;
+      counter = counter + 1;
       activeSlide(counter);
       setTimeout(function () {
         carouselContainerPositionReset();
-      }, 300);
+      }, animationOffset);
     } else {
       carouselContainerPositionReset();
+    }
+  }
+
+  function triggerSlideAction (offset, trigger, moveEventType) {
+    switch (moveEventType) {
+      case 'mouse':
+        const mouseAction = offset > 0 ? nextSlide() : prevSlide();
+        if (Math.abs(offset) > requiredMoveOffsetToTrigger && trigger) {
+          mouseAction();
+        }
+        break;
+      case 'touch':
+        const touchAction = offset < 0 ? nextSlide() : prevSlide();
+        if (Math.abs(offset) > requiredMoveOffsetToTrigger && trigger) {
+          touchAction();
+        }
+        break;
+      default:
+        carouselContainer.style.transform = `translateX(0)`;
     }
   }
 
@@ -144,17 +168,7 @@ export function carouselNewFurniture () {
 
   function touchEnd (e) {
     e.preventDefault();
-
-    if (Math.abs(moveOffset) > 100 && touchMoved) {
-      if (moveOffset < 0) {
-        nextSlide();
-      } else if (moveOffset > 0) {
-        prevSlide();
-      }
-    } else {
-      carouselContainer.style.transform = `translateX(0)`;
-    }
-
+    triggerSlideAction(moveOffset, touchMoved, 'touch');
     touchMoved = false;
   }
 
@@ -185,33 +199,13 @@ export function carouselNewFurniture () {
 
   function mouseLeaveEvent (e) {
     e.preventDefault();
-
-    if (Math.abs(mousePath) > 100 && trigger) {
-      if (mousePath > 0) {
-        nextSlide();
-      } else {
-        prevSlide();
-      }
-    } else {
-      carouselContainer.style.transform = `translateX(0)`;
-    }
-
+    triggerSlideAction(mousePath, trigger, 'mouse');
     resetMouseValues();
   }
 
   function mouseUpEvent (e) {
     e.preventDefault();
-
-    if (Math.abs(mousePath) > 100 && trigger) {
-      if (mousePath > 0) {
-        nextSlide();
-      } else {
-        prevSlide();
-      }
-    } else {
-      carouselContainer.style.transform = `translateX(0)`;
-    }
-
+    triggerSlideAction(mousePath, trigger, 'mouse');
     resetMouseValues();
   }
 
