@@ -1,6 +1,7 @@
 @mixin fade {
-  transition: $veryShortInterval ease-in-out;
+  transition: $background-color-animation-time ease-in-out;
 }
+
 @mixin fade-long {
-  transition: $shortInterval ease-in-out;
+  transition: $background-color-animation-time*2 ease-in-out;
 }

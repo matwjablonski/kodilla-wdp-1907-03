@@ -44,6 +44,7 @@
           text-decoration: none;
           font-size: 18px;
           display: block;
+          @extend %hover-animation-time;
 
           &.active,
           &:hover {
@@ -80,6 +81,7 @@
           height: 13px;
           border-radius: 6px;
           background-color: #e1e1e1;
+          @extend %hover-animation-time;
 
           &.active,
           &:hover {

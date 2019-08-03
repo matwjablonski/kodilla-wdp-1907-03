@@ -5,6 +5,7 @@
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
+  @extend %hover-animation-time;
 
   @include hover-only {
     &:not(.no-hover):hover {
@@ -17,6 +18,7 @@
 
 .btn-main-small {
   @extend .btn-main;
+  @extend %hover-animation-time;
   font-size: 13px;
   line-height: 24px;
   padding: 5px 10px;
@@ -30,10 +32,13 @@
   color: $footer-claim-bg;
   font-size: 13px;
   line-height: 22px;
+  @extend %hover-animation-time;
 
   @include hover-only {
-    background-color: $footer-claim-bg;
-    color: $white;
+    &:hover {
+      background-color: $footer-claim-bg;
+      color: $white;
+    }
   }
 
   &:active {
@@ -48,8 +53,12 @@
   color: $primary;
   font-size: 13px;
   line-height: 22px;
+  @extend %hover-animation-time;
+
   @include hover-only {
-    background-color: $footer-claim-bg;
-    border-color: $footer-claim-bg;
+    &:hover {
+      background-color: $footer-claim-bg;
+      border-color: $footer-claim-bg;
+    }
   }
 }

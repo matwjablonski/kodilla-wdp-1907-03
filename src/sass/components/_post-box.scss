@@ -47,6 +47,7 @@
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
+      @extend %hover-animation-time;
     }
 
     p {
@@ -64,6 +65,10 @@
 
   &-link {
     color: $text-color;
+
+    .btn-post {
+      @extend %hover-animation-time;
+    }
 
     @include hover-only {
       &:hover {
