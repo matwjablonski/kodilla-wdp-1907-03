@@ -1,108 +1,110 @@
 .deals {
   position: relative;
 
-  .photo {
-    &:hover {
-      .stats {
-        opacity: 1;
+  .product-box {
+    .photo {
+      &:hover {
+        .stats {
+          opacity: 1;
+        }
+
+        .center-button {
+          opacity: 1;
+        }
       }
-
-      .center-button {
-        opacity: 1;
-      }
-    }
-  }
-
-  .hot-deals-head {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 50px;
-    width: 100%;
-    background-color: $text-color;
-    color: $white;
-    text-transform: uppercase;
-
-    p {
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 50px;
-      margin-left: 22px;
-      display: inline-block;
-    }
-  }
-
-  .center-button {
-    position: absolute;
-    top: 45%;
-    left: 0px;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    text-transform: uppercase;
-  }
-
-  .stats {
-    text-align: center;
-    opacity: 0;
-  }
-
-  .circle {
-    background-color: $footer-bg;
-    color: $white;
-    text-transform: uppercase;
-    border-radius: 50%;
-    height: 70px;
-    width: 70px;
-    margin: 10px 2px;
-    font-weight: 500;
-    display: inline-block;
-
-    .value {
-      font-size: 24px;
-      line-height: 28px;
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
-    .time {
-      font-size: 13px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
+    .hot-deals-head {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 50px;
+      width: 100%;
+      background-color: $text-color;
+      color: $white;
+      text-transform: uppercase;
 
-  .dots {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 22px;
-    @include fade;
-
-    ul {
-      margin: 0;
-      padding-left: 1rem;
-      list-style: none;
-      transform: translateY(15px);
-      display: inline-block;
-
-      li {
+      p {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 50px;
+        margin-left: 22px;
         display: inline-block;
-        margin-left: 0.5rem;
+      }
+    }
 
-        a {
-          display: block;
-          width: 13px;
-          height: 13px;
-          border-radius: 6px;
-          background-color: #e1e1e1;
+    .center-button {
+      position: absolute;
+      top: 45%;
+      left: 0px;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      text-transform: uppercase;
+    }
 
-          &.active,
-          &:hover {
-            background-color: $primary;
+    .stats {
+      text-align: center;
+      opacity: 0;
+    }
+
+    .circle {
+      background-color: $footer-bg;
+      color: $white;
+      text-transform: uppercase;
+      border-radius: 50%;
+      height: 70px;
+      width: 70px;
+      margin: 10px 2px;
+      font-weight: 500;
+      display: inline-block;
+
+      .value {
+        font-size: 24px;
+        line-height: 28px;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .time {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .dots {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 22px;
+      @include fade;
+
+      ul {
+        margin: 0;
+        padding-left: 1rem;
+        list-style: none;
+        transform: translateY(15px);
+        display: inline-block;
+
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
+
+          a {
+            display: block;
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: #e1e1e1;
+
+            &.active,
+            &:hover {
+              background-color: $primary;
+            }
           }
         }
       }
@@ -152,6 +154,7 @@
         font-size: 24px;
         font-weight: 300;
         text-align: center;
+        padding-bottom: 120px;
       }
     }
 
@@ -224,5 +227,17 @@
       left: 0;
       height: 100%;
     }
+  }
+}
+
+@media (max-width: 921px) {
+  .product-box {
+    display: none;
+  }
+}
+
+@media (min-width: 922px) {
+  .product-box {
+    display: inline-block;
   }
 }
