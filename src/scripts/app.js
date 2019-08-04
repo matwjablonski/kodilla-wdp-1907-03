@@ -1,2 +1,3 @@
 import './stars';
-console.log('hello');
+import './main-menu';
+import './tabs';

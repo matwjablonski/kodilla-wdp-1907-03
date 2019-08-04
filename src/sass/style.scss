@@ -2,11 +2,18 @@
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
+@import "mixins/fade";
+
 @import "bootstrap/bootstrap.scss";
 @import "fontawesome/fontawesome";
 @import "fontawesome/solid";
 @import "fontawesome/brands";
 @import "fontawesome/regular";
+
+// MIXINS
+@import "mixins/fade";
+@import "mixins/hover-supported-devices";
+@import "mixins/breakpoints";
 
 @import "components/header";
 @import "components/footer";
@@ -16,8 +23,10 @@
 @import "components/panel-bar";
 @import "components/post-box";
 @import "components/product-box";
+@import "components/new-furniture-list";
 
 @import "components/section--features";
+@import "components/_section--promotion";
 
 body {
   font-family: "Poppins", sans-serif;

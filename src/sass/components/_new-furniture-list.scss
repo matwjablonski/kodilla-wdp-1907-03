@@ -1,0 +1,13 @@
+.new-furniture-list {
+  @extend %hover-animation-time;
+  opacity: 0;
+  display: none;
+
+  &.show {
+    opacity: 1;
+  }
+
+  &.fadeOut {
+    opacity: 0;
+  }
+}

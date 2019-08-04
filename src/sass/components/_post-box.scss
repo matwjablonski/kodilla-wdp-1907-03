@@ -1,12 +1,20 @@
 .post-box {
   margin-bottom: 2rem;
+  overflow: hidden;
 
   .cover {
     padding: 70% 25px 0 25px;
+    position: relative;
     background: {
-      color: #f4f5f7;
       size: cover;
       position: center;
+    }
+
+    .blog-photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
     }
 
     .details {
@@ -14,6 +22,7 @@
       display: flex;
       background-color: #ffffff;
       font-size: 14px;
+      position: relative;
 
       & > * {
         flex: 1 1 auto;
@@ -31,12 +40,14 @@
 
   .post-info {
     padding: 25px;
+    margin-bottom: 2rem;
 
     h5 {
-      color: $primary;
+      color: $text-color;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
+      @extend %hover-animation-time;
     }
 
     p {
@@ -49,6 +60,29 @@
     .more {
       text-align: center;
       padding-top: 30px;
+    }
+  }
+
+  &-link {
+    color: $text-color;
+
+    .btn-post {
+      @extend %hover-animation-time;
+    }
+
+    @include hover-only {
+      &:hover {
+        text-decoration: none;
+        color: inherit;
+
+        .btn-post {
+          background: $primary;
+        }
+
+        h5 {
+          color: $primary;
+        }
+      }
     }
   }
 }

@@ -1,11 +1,33 @@
 $header-topbar-bg: #864343;
 $header-bg: #723636;
+$header-box-shadow-color: rgba(1, 2, 2, 0.2);
 
 $footer-claim-bg: #2a2a2a;
 $footer-bg: #363636;
 
 $primary: #d58e32;
+$white: #fff;
 
 $text-color: #2a2a2a;
 
 $form-border-color: #292929;
+$promotion-overlay-color: rgba(42, 42, 42, 0.3);
+$promotion-primary-color: #e8edf7;
+$promotion-secondary-color: #fbf3f7;
+$footer-icon: rgb(169, 169, 169);
+
+// TIMING VARIABLES (for transitions in mixins)
+
+$background-color-animation-time: 250ms;
+$color-animation-time: 250ms;
+
+%hover-animation-time {
+  transition: background-color $background-color-animation-time;
+  transition: color $color-animation-time;
+}
+
+// BREAKPOINTS (set according to bootstrap grid table -> https://getbootstrap.com/docs/4.0/layout/grid/)
+$bp-s: 576px;
+$bp-m: 768px;
+$bp-l: 992px;
+$bp-xl: 1200px;

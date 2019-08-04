@@ -1,7 +1,13 @@
+%hover-animation-time {
+  transition: background-color $background-color-animation-time;
+  transition: color $color-animation-time;
+}
+
 .feature-box {
   border: 1px solid #b6b6b6;
   text-align: center;
   margin-top: 40px;
+  position: relative;
 
   .icon {
     transform: translateY(-50%);
@@ -16,6 +22,7 @@
       justify-content: center;
       align-items: center;
       border: 1px solid #b6b6b6;
+      @extend %hover-animation-time;
     }
 
     &::before {
@@ -38,6 +45,7 @@
     color: rgb(42, 42, 42);
     margin-top: -0.5rem;
     letter-spacing: 1px;
+    @extend %hover-animation-time;
 
     h5 {
       font-weight: 600;
@@ -49,15 +57,23 @@
     }
   }
 
-  &.active {
-    i {
-      background-color: $primary;
-      color: #ffffff;
-      border-color: $primary;
-    }
+  @include hover-only {
+    &:hover {
+      i {
+        background-color: $primary;
+        color: #ffffff;
+        border-color: $primary;
+      }
 
-    .content {
-      color: $primary;
+      .content {
+        color: $primary;
+      }
     }
+  }
+}
+
+@include media-breakpoint-only(xs) {
+  .feature-box {
+    height: 70%;
   }
 }
