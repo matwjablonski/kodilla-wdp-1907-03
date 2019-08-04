@@ -15,3 +15,24 @@
     @content;
   }
 }
+
+//max-width: 767px
+@mixin small {
+  @media (max-width: $bp-m - 1) {
+    @content;
+  }
+}
+
+//min-width: 768px and max-width: 991px
+@mixin medium {
+  @media (min-width: $bp-m) and (max-width: $bp-l - 1) {
+    @content;
+  }
+}
+
+//min-width: 992px and max-width: 1199px
+@mixin large {
+  @media (min-width: $bp-l) and (max-width: $bp-xl - 1) {
+    @content;
+  }
+}
