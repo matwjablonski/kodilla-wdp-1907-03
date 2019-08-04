@@ -44,9 +44,36 @@
     }
 
     .stars {
-      a {
+      span {
+        cursor: pointer;
         text-decoration: none;
         color: rgb(42, 42, 42);
+        @extend .far;
+        @extend .fa-star;
+
+        &.full {
+          @extend .fas;
+        }
+      }
+    }
+
+    .stars-high {
+      span {
+        text-decoration: none;
+        color: $primary;
+        @extend .far;
+        @extend .fa-star;
+
+        &.full {
+          @extend .fas;
+        }
+      }
+    }
+
+    .demo {
+      span {
+        text-decoration: none;
+        color: $primary;
         @extend .far;
         @extend .fa-star;
 
