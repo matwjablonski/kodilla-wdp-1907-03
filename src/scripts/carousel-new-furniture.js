@@ -136,13 +136,13 @@ export function carouselNewFurniture () {
   function triggerSlideAction (offset, trigger, moveEventType) {
     switch (moveEventType) {
       case 'mouse':
-        const mouseAction = offset > 0 ? nextSlide() : prevSlide();
+        const mouseAction = () => (offset > 0 ? nextSlide() : prevSlide());
         if (Math.abs(offset) > requiredMoveOffsetToTrigger && trigger) {
           mouseAction();
         }
         break;
       case 'touch':
-        const touchAction = offset < 0 ? nextSlide() : prevSlide();
+        const touchAction = () => (offset < 0 ? nextSlide() : prevSlide());
         if (Math.abs(offset) > requiredMoveOffsetToTrigger && trigger) {
           touchAction();
         }
