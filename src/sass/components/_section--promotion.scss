@@ -7,7 +7,7 @@
     background-size: cover;
     background-position: center;
 
-    @include small {
+    @include media-breakpoint-down(sm) {
       margin-bottom: 32px;
     }
 
@@ -52,7 +52,7 @@
     height: 195px;
     margin-bottom: 30px;
 
-    @include small {
+    @include media-breakpoint-down(sm) {
       margin-bottom: 32px;
     }
 
@@ -72,7 +72,7 @@
       min-width: 120px;
       text-transform: uppercase;
 
-      @include large {
+      @include media-breakpoint-only(lg) {
         padding-left: 35px;
       }
 
@@ -129,7 +129,7 @@
       align-items: flex-end;
       text-transform: uppercase;
 
-      @include large {
+      @include media-breakpoint-only(lg) {
         padding: 20px;
       }
 
