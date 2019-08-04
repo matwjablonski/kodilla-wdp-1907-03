@@ -1,0 +1,169 @@
+.section-gallery {
+  padding: 3rem 0;
+  .container {
+    .row {
+      .gallery-box {
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        .gallery-active {
+          .gallery-picture {
+            width: 100%;
+            position: relative;
+            .gallery-tabs {
+              .my-tab-list {
+                display: flex;
+                text-transform: uppercase;
+                border-top: 1px solid $product-border-color;
+                border-left: 1px solid $product-border-color;
+                padding: 0;
+                margin-bottom: 0;
+                .tab-name {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 25%;
+                  border-bottom: 1px solid $product-border-color;
+                  font-size: 18px;
+                  font-weight: 500px;
+                  height: 45px;
+                  border-right: 1px solid $product-border-color;
+                  &:hover {
+                    cursor: pointer;
+                  }
+                  p {
+                    margin: 0;
+                  }
+                }
+                .my-active {
+                  border-bottom: transparent;
+                  border-top: 4px solid $primary;
+                  background-color: $product-background-color;
+                  color: $primary;
+                }
+              }
+            }
+
+            .gallery-parts {
+              background-color: $product-background-color;
+              position: relative;
+
+              .gallery-topseller {
+                height: 450px;
+                background-image: url("../images/redChairNice.png");
+                background-size: 350px;
+                background-position: 35px 30px;
+                background-repeat: no-repeat;
+
+                .gallery-actions {
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+
+                  .action-icon {
+                    margin: 10px 0 0 10px;
+
+                    &:hover {
+                      .tooltiptext {
+                        visibility: visible;
+                        opacity: 1;
+                      }
+                    }
+
+                    a {
+                      &:hover {
+                        color: $primary;
+                        background-color: transparent;
+                        border-color: $primary;
+                      }
+                    }
+                  }
+                }
+
+                .content {
+                  text-align: center;
+                  padding: 20px;
+                  box-shadow: 0 3px 6px rgba(1, 2, 2, 0.24);
+                  width: 253px;
+                  height: 96px;
+                  position: relative;
+                  position: absolute;
+                  bottom: 30px;
+                  right: 3px;
+                  background-color: $white;
+
+                  &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    border-style: solid;
+                    border-width: 30px 30px 0 0;
+                    border-color: $text-color transparent;
+                  }
+
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    border-style: solid;
+                    border-width: 0 0 30px 30px;
+                    border-color: $text-color transparent;
+                    right: 0;
+                    bottom: 0;
+                  }
+
+                  h5 {
+                    color: $text-color;
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: 1px;
+                  }
+
+                  .stars {
+                    a {
+                      text-decoration: none;
+                      color: rgb(42, 42, 42);
+                      @extend .far;
+                      @extend .fa-star;
+
+                      &.full {
+                        @extend .fas;
+                      }
+                    }
+                  }
+                }
+                .circle-price {
+                  position: absolute;
+                  width: 105px;
+                  height: 105px;
+                  background-color: $text-color;
+                  opacity: 0.6;
+                  border-radius: 50%;
+                  bottom: 110px;
+                  right: 75px;
+                  color: $white;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+
+                  .current-price {
+                    font-size: 20px;
+                    font-weight: 500;
+                    margin-bottom: 0;
+                    margin-top: 20px;
+                  }
+                  .previous-price {
+                    font-size: 16px;
+                    text-decoration: line-through;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
