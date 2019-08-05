@@ -83,8 +83,7 @@
           background-color: #e1e1e1;
           @extend %hover-animation-time;
 
-          &.active,
-          &:hover {
+          &.active {
             background-color: $primary;
           }
         }
