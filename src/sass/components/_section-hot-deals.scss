@@ -3,13 +3,15 @@
 
   .product-box {
     .photo {
-      &:hover {
-        .stats {
-          opacity: 1;
-        }
+      @include hover-only {
+        &:hover {
+          .stats {
+            opacity: 1;
+          }
 
-        .center-button {
-          opacity: 1;
+          .center-button {
+            opacity: 1;
+          }
         }
       }
     }
@@ -81,7 +83,7 @@
       position: absolute;
       top: 0;
       right: 22px;
-      @include fade;
+      @extend %hover-animation-time;
 
       ul {
         margin: 0;
@@ -109,12 +111,12 @@
         }
       }
     }
-  }
 
-  .old-price {
-    display: inline-block;
-    color: $footer-bg;
-    font-size: 15px;
+    .old-price {
+      display: inline-block;
+      color: $footer-bg;
+      font-size: 15px;
+    }
   }
 
   .banner {
@@ -177,9 +179,12 @@
         color: $white;
         line-height: 40px;
         margin: 0;
+        @extend %hover-animation-time;
 
-        &:hover {
-          background-color: $primary;
+        @include hover-only {
+          &:hover {
+            background-color: $primary;
+          }
         }
       }
 
@@ -206,10 +211,13 @@
       font-weight: 600;
       font-size: 14px;
       display: inline-block;
+      @extend %hover-animation-time;
 
-      &:hover {
-        background-color: $primary;
-        color: $white;
+      @include hover-only {
+        &:hover {
+          background-color: $primary;
+          color: $white;
+        }
       }
     }
 
