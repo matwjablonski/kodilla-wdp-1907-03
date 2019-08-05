@@ -1,4 +1,6 @@
+import { stars } from './stars';
 export function carouselNewFurniture () {
+  stars();
   const carouselContainer = document.querySelector('.carousel-container');
   const tileBox = document.querySelector('.carousel-box');
   const tiles = document.querySelectorAll('.carousel-tile');
