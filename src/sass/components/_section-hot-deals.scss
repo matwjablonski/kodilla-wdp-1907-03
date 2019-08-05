@@ -33,6 +33,40 @@
         margin-left: 22px;
         display: inline-block;
       }
+
+      .dots {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 22px;
+        @extend %hover-animation-time;
+
+        ul {
+          margin: 0;
+          padding-left: 1rem;
+          list-style: none;
+          transform: translateY(15px);
+          display: inline-block;
+
+          li {
+            display: inline-block;
+            margin-left: 0.5rem;
+
+            a {
+              display: block;
+              width: 13px;
+              height: 13px;
+              border-radius: 6px;
+              background-color: #e1e1e1;
+
+              &.active,
+              &:hover {
+                background-color: $primary;
+              }
+            }
+          }
+        }
+      }
     }
 
     .center-button {
@@ -55,60 +89,20 @@
       color: $white;
       text-transform: uppercase;
       border-radius: 50%;
-      height: 70px;
-      width: 70px;
       margin: 10px 2px;
       font-weight: 500;
       display: inline-block;
 
       .value {
-        font-size: 24px;
-        line-height: 28px;
-        margin-top: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
       .time {
-        font-size: 13px;
         display: flex;
         align-items: center;
         justify-content: center;
-      }
-    }
-
-    .dots {
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      right: 22px;
-      @extend %hover-animation-time;
-
-      ul {
-        margin: 0;
-        padding-left: 1rem;
-        list-style: none;
-        transform: translateY(15px);
-        display: inline-block;
-
-        li {
-          display: inline-block;
-          margin-left: 0.5rem;
-
-          a {
-            display: block;
-            width: 13px;
-            height: 13px;
-            border-radius: 6px;
-            background-color: #e1e1e1;
-
-            &.active,
-            &:hover {
-              background-color: $primary;
-            }
-          }
-        }
       }
     }
 
@@ -120,7 +114,6 @@
   }
 
   .banner {
-    height: 524px;
     width: 100%;
     position: relative;
     text-transform: uppercase;
@@ -136,10 +129,7 @@
       left: 0;
 
       .title {
-        font-size: 54px;
         text-align: center;
-        line-height: 70px;
-        margin-top: 60px;
 
         .word1 {
           font-weight: 200;
@@ -153,7 +143,6 @@
       }
 
       .postscript {
-        font-size: 24px;
         font-weight: 300;
         text-align: center;
         padding-bottom: 120px;
@@ -238,14 +227,103 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 576px) {
   .product-box {
     display: none;
+  }
+
+  .banner {
+    height: 524px;
+    .slogan {
+      .title {
+        margin-top: 30px;
+        font-size: 48px;
+        line-height: 60px;
+      }
+
+      .postscript {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+@media (min-width: 577px) {
+  .product-box {
+    display: none;
+  }
+
+  .banner {
+    height: 524px;
+
+    .slogan {
+      .title {
+        margin-top: 60px;
+        font-size: 54px;
+        line-height: 70px;
+      }
+
+      .postscript {
+        font-size: 24px;
+      }
+    }
   }
 }
 
 @media (min-width: 993px) {
   .product-box {
-    display: inline-block;
+    display: block;
+
+    .stats {
+      height: 125px;
+    }
+
+    .circle {
+      height: 60px;
+      width: 60px;
+
+      .value {
+        font-size: 24px;
+        line-height: 26px;
+        margin-top: 8px;
+      }
+
+      .time {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .banner {
+    height: 512px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-box {
+    display: block;
+
+    .stats {
+      height: 90px;
+    }
+
+    .circle {
+      height: 70px;
+      width: 70px;
+
+      .value {
+        font-size: 24px;
+        line-height: 28px;
+        margin-top: 10px;
+      }
+
+      .time {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .banner {
+    height: 524px;
   }
 }
