@@ -61,7 +61,7 @@
           justify-content: center;
 
           .action-box {
-            margin: 10px 0 0 10px;
+            margin: 10px 10px 0;
 
             .tooltip-box {
               position: relative;
@@ -73,6 +73,7 @@
               color: $white;
               opacity: 0;
               transition: opacity 250ms;
+              text-transform: capitalize;
 
               &::before {
                 content: "";
@@ -174,6 +175,7 @@
             margin-bottom: 0;
             margin-top: 20px;
           }
+
           .previous-price {
             font-size: 16px;
             text-decoration: line-through;
@@ -181,6 +183,7 @@
         }
       }
     }
+
     .gallery-slider {
       display: flex;
       justify-content: space-between;
@@ -191,8 +194,9 @@
       .gallery-slide-box {
         height: 70px;
         width: 70px;
-        background-color: #cccccc;
         opacity: 0.5;
+        background-color: $gallery-slider-color;
+
         &:hover {
           cursor: pointer;
         }
@@ -223,6 +227,7 @@
       }
     }
   }
+
   .gallery-big-photo {
     .gallery-box-image {
       height: 100%;
@@ -230,27 +235,32 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+
       .gallery-box-text {
         padding: 50px 45px;
         background-color: transparent;
+
         .first-line-text {
           font-size: 18px;
           text-transform: uppercase;
           margin: 0;
         }
+
         .big-price {
           font-size: 46px;
-          color: #79ae30;
+          color: $big-photo-primary-color;
           font-weight: 500;
         }
+
         .second-line-text {
           font-size: 46px;
           text-transform: capitalize;
-          color: #d58e32;
+          color: $big-photo-secondary-color;
           font-weight: 500;
         }
+
         .shop-now-btn {
-          background-color: #79ae30;
+          background-color: $big-photo-primary-color;
           color: $white;
           height: 54px;
           line-height: 54px;
@@ -262,8 +272,10 @@
           border: none;
           outline: none;
           margin: 10px 0;
+
           &:hover {
             background-color: $primary;
+            cursor: pointer;
           }
         }
       }
