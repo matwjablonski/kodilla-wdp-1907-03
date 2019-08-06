@@ -1,17 +1,21 @@
 .section--brands {
-  margin: 3rem 0 5rem;
+  margin: 0 0 5rem;
+
   .brands-box {
     border-top: 1px solid $product-border-color;
     border-bottom: 1px solid $product-border-color;
+
     .brands-slider {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 25px 0;
+
       .brands-arrow-box {
         height: 92px;
         width: 33px;
         background-color: $text-color;
+
         a {
           display: flex;
           justify-content: center;
@@ -20,6 +24,7 @@
           width: 100%;
           height: 100%;
           text-decoration: none;
+
           &:hover {
             cursor: pointer;
             color: $primary;
