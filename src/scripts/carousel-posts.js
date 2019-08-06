@@ -42,7 +42,7 @@ function fadeInListFix () {
 fadeInListFix();
 
 function evalTilesInRow () {
-  let itemsInRow = carouselContainer.clientWidth / tileWidth;
+  const itemsInRow = carouselContainer.clientWidth / tileWidth;
   return Math.round(itemsInRow);
 }
 
