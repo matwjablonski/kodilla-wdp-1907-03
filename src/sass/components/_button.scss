@@ -53,6 +53,7 @@
   color: $primary;
   font-size: 13px;
   line-height: 22px;
+  background-color: $white;
   @extend %hover-animation-time;
 
   @include hover-only {
