@@ -1,7 +1,7 @@
 .deals {
   position: relative;
 
-  .product-box {
+  .product-box-hot-deals {
     .photo {
       @include hover-only {
         &:hover {
@@ -220,7 +220,7 @@
 }
 
 @media (max-width: 576px) {
-  .product-box {
+  .product-box-hot-deals {
     display: none;
   }
 
@@ -241,7 +241,7 @@
 }
 
 @media (min-width: 577px) {
-  .product-box {
+  .product-box-hot-deals {
     display: none;
   }
 
@@ -263,7 +263,7 @@
 }
 
 @media (min-width: 993px) {
-  .product-box {
+  .product-box-hot-deals {
     display: block;
 
     .stats {
@@ -292,7 +292,7 @@
 }
 
 @media (min-width: 1200px) {
-  .product-box {
+  .product-box-hot-deals {
     display: block;
 
     .stats {
