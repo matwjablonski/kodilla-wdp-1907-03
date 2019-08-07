@@ -16,7 +16,6 @@ function nextPicture () {
   var i = isActive();
   images[i].classList.remove('active-photo');
   i++;
-  console.log(i);
   if (i >= imagesLen) {
     i = 0;
   }
@@ -29,7 +28,6 @@ function prevPicture () {
   var i = isActive();
   images[i].classList.remove('active-photo');
   i--;
-  console.log(i);
   if (i < 0) {
     i = imagesLen - 1;
   }
