@@ -2,6 +2,8 @@ var productBox = document.querySelectorAll('.hot-deals-box');
 
 var productBoxLen = productBox.length;
 
+var dots = document.querySelectorAll('.hot-dot');
+
 function isActive () {
   for (var i = 0; i < productBoxLen; i++) {
     if (productBox[i].classList.contains('active-hot-deal')) {
@@ -24,11 +26,12 @@ function autoChange () {
   dots[i].classList.add('active');
 }
 
-setInterval(autoChange, 3000);
-
-var dots = document.querySelectorAll('.hot-dot');
+var time = setInterval(autoChange, 3000);
 
 var showHotDeal = function () {
+  clearInterval(time);
+  time = setTimeout(autoChange, 6000);
+  setTimeout(startInterval, 6000);
   for (var i = 0; i < productBoxLen; i++) {
     if (this === dots[i]) {
       productBox[i].classList.add('active-hot-deal');
@@ -39,6 +42,10 @@ var showHotDeal = function () {
     }
   }
 };
+
+function startInterval () {
+  time = setInterval(autoChange, 3000);
+}
 
 for (var i = 0; i < dots.length; i++) {
   dots[i].addEventListener('click', showHotDeal);
