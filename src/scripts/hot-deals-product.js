@@ -28,7 +28,7 @@ var time = setInterval(autoChange, 3000);
 
 var showHotDeal = function () {
   clearInterval(time);
-  time = setTimeout(autoChange, 6000);
+  setTimeout(autoChange, 6000);
   setTimeout(startInterval, 6000);
   for (let i = 0; i < productBoxLen; i++) {
     if (this === dots[i]) {
