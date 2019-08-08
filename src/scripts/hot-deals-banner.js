@@ -15,7 +15,7 @@ function isActive () {
 function nextPicture () {
   let i = isActive();
   images[i].classList.remove('active-photo');
-  i++;
+  i += 1;
   if (i >= imagesLen) {
     i = 0;
   }
@@ -27,7 +27,7 @@ next.addEventListener('click', nextPicture);
 function prevPicture () {
   let i = isActive();
   images[i].classList.remove('active-photo');
-  i--;
+  i -= 1;
   if (i < 0) {
     i = imagesLen - 1;
   }

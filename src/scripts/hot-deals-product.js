@@ -16,7 +16,7 @@ function autoChange () {
     productBox[j].classList.remove('active-hot-deal');
     dots[j].classList.remove('active');
   }
-  i++;
+  i += 1;
   if (i >= productBoxLen) {
     i = 0;
   }
@@ -24,9 +24,9 @@ function autoChange () {
   dots[i].classList.add('active');
 }
 
-var time = setInterval(autoChange, 3000);
+let time = setInterval(autoChange, 3000);
 
-var showHotDeal = function () {
+let showHotDeal = function () {
   clearInterval(time);
   setTimeout(autoChange, 6000);
   setTimeout(startInterval, 6000);
