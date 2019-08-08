@@ -1,11 +1,9 @@
-var productBox = document.querySelectorAll('.hot-deals-box');
-
-var productBoxLen = productBox.length;
-
-var dots = document.querySelectorAll('.hot-dot');
+const productBox = document.querySelectorAll('.hot-deals-box');
+const productBoxLen = productBox.length;
+const dots = document.querySelectorAll('.hot-dot');
 
 function isActive () {
-  for (var i = 0; i < productBoxLen; i++) {
+  for (let i = 0; i < productBoxLen; i++) {
     if (productBox[i].classList.contains('active-hot-deal')) {
       return i;
     }
@@ -13,8 +11,8 @@ function isActive () {
 }
 
 function autoChange () {
-  var i = isActive();
-  for (var j = 0; j < productBoxLen; j++) {
+  let i = isActive();
+  for (let j = 0; j < productBoxLen; j++) {
     productBox[j].classList.remove('active-hot-deal');
     dots[j].classList.remove('active');
   }
@@ -32,7 +30,7 @@ var showHotDeal = function () {
   clearInterval(time);
   time = setTimeout(autoChange, 6000);
   setTimeout(startInterval, 6000);
-  for (var i = 0; i < productBoxLen; i++) {
+  for (let i = 0; i < productBoxLen; i++) {
     if (this === dots[i]) {
       productBox[i].classList.add('active-hot-deal');
       dots[i].classList.add('active');
@@ -47,6 +45,6 @@ function startInterval () {
   time = setInterval(autoChange, 3000);
 }
 
-for (var i = 0; i < dots.length; i++) {
+for (let i = 0; i < dots.length; i++) {
   dots[i].addEventListener('click', showHotDeal);
 }
