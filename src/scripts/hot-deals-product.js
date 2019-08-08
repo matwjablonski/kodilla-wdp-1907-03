@@ -26,7 +26,7 @@ function autoChange () {
 
 let time = setInterval(autoChange, 3000);
 
-let showHotDeal = function () {
+const showHotDeal = function () {
   clearInterval(time);
   setTimeout(autoChange, 6000);
   setTimeout(startInterval, 6000);
