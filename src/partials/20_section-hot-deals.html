@@ -3,19 +3,121 @@
     <div class="deals">
       <div class="row">
         <div class="col-xl-4 col-lg-4">
-          <div class="product-box">
+          <div class="hot-deals-head">
+            <p>hot deals</p>
+            <div class="dots">
+              <ul>
+                <li><div class="hot-dot active"></div></li>
+                <li><div class="hot-dot"></div></li>
+                <li><div class="hot-dot"></div></li>
+              </ul>
+            </div>
+          </div>
+          <div class="product-box hot-deals-box active-hot-deal">
             <div class="photo">
-              <img src="images/ad2.png" alt="" class="furniture-photo" />
-              <div class="hot-deals-head">
-                <p>hot deals</p>
-                <div class="dots">
-                  <ul>
-                    <li><a href="#" class="active"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                  </ul>
+              <img
+                src="images/hot-deals1.png"
+                alt="blue armchair"
+                class="furniture-photo hot-deals-photo"
+              />
+              <div class="center-button">
+                <a href="#" class="btn-main" add-to-cart>
+                  <i class="fa fa-shopping-basket"></i> Add to cart
+                </a>
+              </div>
+              <div class="stats">
+                <div class="circle">
+                  <div class="value">25</div>
+                  <div class="time">days</div>
+                </div>
+                <div class="circle">
+                  <div class="value">10</div>
+                  <div class="time">hrs</div>
+                </div>
+                <div class="circle">
+                  <div class="value">45</div>
+                  <div class="time">mins</div>
+                </div>
+                <div class="circle">
+                  <div class="value">30</div>
+                  <div class="time">secs</div>
                 </div>
               </div>
+            </div>
+            <div class="content">
+              <h5>Aenean Ru Bristique</h5>
+              <div class="stars">
+                <a href="#" class="full"></a> <a href="#" class="full"></a>
+                <a href="#"></a> <a href="#"></a> <a href="#"></a>
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="actions">
+              <div>
+                <a href="#" class="btn-outline"><i class="far fa-eye"></i></a>
+                <a href="#" class="btn-active"><i class="far fa-heart"></i></a>
+                <a href="#" class="btn-outline"><i class="fas fa-exchange-alt"></i></a>
+              </div>
+              <div class="old-price no-hover"><s>$ 350.00</s></div>
+              <div class="price btn-main-small no-hover">$ 300.00</div>
+            </div>
+          </div>
+          <div class="product-box hot-deals-box">
+            <div class="photo">
+              <img
+                src="images/hot-deals2.png"
+                alt="orange armchair"
+                class="furniture-photo hot-deals-photo"
+              />
+              <div class="center-button">
+                <a href="#" class="btn-main" add-to-cart>
+                  <i class="fa fa-shopping-basket"></i> Add to cart
+                </a>
+              </div>
+              <div class="stats">
+                <div class="circle">
+                  <div class="value">25</div>
+                  <div class="time">days</div>
+                </div>
+                <div class="circle">
+                  <div class="value">10</div>
+                  <div class="time">hrs</div>
+                </div>
+                <div class="circle">
+                  <div class="value">45</div>
+                  <div class="time">mins</div>
+                </div>
+                <div class="circle">
+                  <div class="value">30</div>
+                  <div class="time">secs</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <h5>Aenean Ru Bristique</h5>
+              <div class="stars">
+                <a href="#" class="full"></a> <a href="#" class="full"></a>
+                <a href="#"></a> <a href="#"></a> <a href="#"></a>
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="actions">
+              <div>
+                <a href="#" class="btn-outline"><i class="far fa-eye"></i></a>
+                <a href="#" class="btn-active"><i class="far fa-heart"></i></a>
+                <a href="#" class="btn-outline"><i class="fas fa-exchange-alt"></i></a>
+              </div>
+              <div class="old-price no-hover"><s>$ 350.00</s></div>
+              <div class="price btn-main-small no-hover">$ 300.00</div>
+            </div>
+          </div>
+          <div class="product-box hot-deals-box">
+            <div class="photo">
+              <img
+                src="images/hot-deals3.png"
+                alt="white chair"
+                class="furniture-photo hot-deals-photo"
+              />
               <div class="center-button">
                 <a href="#" class="btn-main" add-to-cart>
                   <i class="fa fa-shopping-basket"></i> Add to cart
@@ -61,7 +163,17 @@
         </div>
         <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
           <div class="banner">
-            <img src="./images/advertisement.png" alt="" class="advertisement-photo" />
+            <img
+              src="./images/banner1a.png"
+              alt="blue and gold wallpaper"
+              class="advertisement-photo active-photo"
+            />
+            <img src="./images/banner2a.png" alt="salon" class="advertisement-photo" />
+            <img
+              src="./images/banner3a.png"
+              alt="room with white sofa"
+              class="advertisement-photo"
+            />
             <div class="slogan">
               <div class="title">
                 <div class="word1">indor</div>
@@ -74,8 +186,8 @@
             </div>
             <div class="row">
               <div class="slide-down">
-                <div class="down-button previous"><</div>
-                <div class="down-button next">></div>
+                <div class="down-button previous" id="button-previous"><</div>
+                <div class="down-button next" id="button-next">></div>
               </div>
             </div>
           </div>
