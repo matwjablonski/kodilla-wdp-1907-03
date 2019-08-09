@@ -1,4 +1,4 @@
-#modal-container {
+.modal-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -52,6 +52,7 @@
 
       &:hover {
         cursor: pointer;
+
         i {
           transform: rotate(90deg);
           color: $primary;

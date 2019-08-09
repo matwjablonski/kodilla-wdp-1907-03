@@ -6,9 +6,8 @@ const page = document.querySelector('html');
 function listenToLeaveFromTop (e) {
   if (e.clientY <= 0) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 page.addEventListener('mouseleave', function (e) {
