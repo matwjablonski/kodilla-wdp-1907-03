@@ -1,0 +1,67 @@
+#modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  display: none;
+  background: rgba($form-border-color, 0.4);
+
+  &.show {
+    display: flex;
+    justify-content: center;
+  }
+
+  .modal-box {
+    display: none;
+    align-self: center;
+    position: relative;
+    width: 100%;
+    min-width: 200px;
+    max-width: 900px;
+    height: max-content;
+    background: $white;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba($form-border-color, 0.2);
+    padding-bottom: 20px;
+
+    &.show {
+      display: inline;
+    }
+
+    &-header {
+      margin: 0;
+      padding: 10px;
+      border-bottom: 1px solid $form-border-color;
+      text-transform: uppercase;
+      color: $primary;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    &-body {
+      padding: 10px;
+    }
+
+    #close-modal {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 12px 20px;
+
+      &:hover {
+        cursor: pointer;
+        i {
+          transform: rotate(90deg);
+          color: $primary;
+        }
+      }
+
+      i {
+        @include fade;
+        font-size: 24px;
+      }
+    }
+  }
+}

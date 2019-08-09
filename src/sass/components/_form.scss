@@ -1,0 +1,15 @@
+form.main-form {
+  width: 100%;
+
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $text-color;
+
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+    }
+  }
+}
