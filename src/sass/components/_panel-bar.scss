@@ -33,8 +33,6 @@
     }
   }
 
-  position: relative;
-
   .menu {
     text-align: center;
 
@@ -128,8 +126,6 @@
     &.new-furniture-dots {
       @include mobile {
         width: 100%;
-        display: block;
-        // margin-top: 15px;
 
         ul {
           padding: 0;
