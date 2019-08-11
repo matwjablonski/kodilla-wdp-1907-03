@@ -6,25 +6,18 @@
     border-bottom: 1px solid $product-border-color;
 
     .brands-slider {
-      //margin: 0 33px;
       margin: 0 auto;
       position: relative;
       overflow-x: hidden;
-      //width: 100%;
 
       .brands-slider-box {
         display: flex;
-        //flex-wrap: none;
-        //justify-content: space-around;
-        //align-items: center;
         margin: 25px 33px;
         transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
         .logo-box {
           width: 143px;
           height: 92px;
-          //margin: 10x;
-          //border: 1px solid $product-border-color;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -43,9 +36,6 @@
           }
           @media (max-width: 410px) {
             flex: 1 0 100%;
-          }
-          img {
-            //border: 1px solid $product-border-color;
           }
         }
       }
