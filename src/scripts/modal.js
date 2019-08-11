@@ -28,6 +28,7 @@ function showModal (modal) {
   closeBtn.addEventListener('click', function () {
     closeModal(modal);
   });
+
   modalContainer.addEventListener('click', function (e) {
     if (e.target === modalContainer) {
       closeModal(modal);
