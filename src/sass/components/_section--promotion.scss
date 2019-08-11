@@ -61,19 +61,54 @@
       width: 35%;
       background-image: url("../images/redChairNice.png");
       background-size: 190px;
-      background-position: 180px 9px;
+      background-position: 0px 9px;
+      background-repeat: no-repeat;
+
+      @include media-breakpoint-only(lg) {
+        background-position: -5px 9px;
+      }
+
+      @include media-breakpoint-only(md) {
+        background-size: 120px;
+        background-position: 0px 35px;
+      }
+
+      @media (max-width: 520px) {
+        background-size: 150px;
+        background-position: 0px 25px;
+      }
+
+      @media (max-width: 430px) {
+        width: 50%;
+      }
     }
 
     .inbox-item-center {
       height: 100%;
-      width: 40%;
-      z-index: 10;
-      padding: 0 20px;
+      width: 30%;
+      padding-left: 40px;
       min-width: 120px;
       text-transform: uppercase;
 
       @include media-breakpoint-only(lg) {
-        padding-left: 35px;
+        padding-left: 25px;
+        padding-right: 10px;
+      }
+
+      @include media-breakpoint-only(md) {
+        padding-left: 15px;
+      }
+
+      @include media-breakpoint-only(sm) {
+        padding-left: 30px;
+      }
+
+      @include media-breakpoint-only(xs) {
+        padding-left: 25px;
+      }
+
+      @media (max-width: 430px) {
+        width: 50%;
       }
 
       .box-two-first-line {
@@ -103,10 +138,37 @@
 
     .inbox-item-right {
       height: 100%;
-      width: 25%;
+      width: 35%;
       background-image: url("../images/blackChair2.png");
       background-size: 165px;
-      background-position: 150px 8px;
+      background-position: 30px 8px;
+      background-repeat: no-repeat;
+
+      @include media-breakpoint-only(lg) {
+        background-position: 5px 8px;
+      }
+
+      @include media-breakpoint-only(md) {
+        background-size: 110px;
+        background-position: 0px 35px;
+      }
+
+      @include media-breakpoint-only(sm) {
+        background-position: 15px 8px;
+      }
+
+      @include media-breakpoint-only(xs) {
+        background-position: 15px 8px;
+      }
+
+      @media (max-width: 520px) {
+        background-size: 130px;
+        background-position: 25px 25px;
+      }
+
+      @media (max-width: 430px) {
+        display: none;
+      }
     }
   }
 
@@ -114,10 +176,14 @@
     background-color: $promotion-secondary-color;
     height: 195px;
 
-    .inbox-item-small-left {
-      background-image: url("../images/bed-2.png");
-      background-size: 340px;
-      background-position: 270px 8px;
+    @include media-breakpoint-only(md) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 430px) {
+      display: flex;
+      flex-direction: column;
     }
 
     .inbox-item-small {
@@ -126,7 +192,6 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
-      align-items: flex-end;
       text-transform: uppercase;
 
       @include media-breakpoint-only(lg) {
@@ -148,6 +213,74 @@
         font-size: 17px;
         padding: 0 17px;
         margin: 0;
+      }
+    }
+
+    .inbox-item-small-left {
+      background-image: url("../images/bed-2.png");
+      background-size: 340px;
+      background-repeat: no-repeat;
+      width: 65%;
+
+      @include media-breakpoint-only(lg) {
+        background-size: 280px;
+        background-position: 0px 15px;
+        width: 60%;
+      }
+
+      @include media-breakpoint-only(md) {
+        min-height: 60%;
+        width: 100%;
+        background-size: 210px;
+        background-position: 70px 0px;
+      }
+
+      @include media-breakpoint-only(xs) {
+        background-size: 260px;
+        background-position: 0px 30px;
+        width: 55%;
+      }
+
+      @media (max-width: 520px) {
+        background-size: 215px;
+      }
+
+      @media (max-width: 430px) {
+        min-height: 60%;
+        width: 100%;
+        background-size: 210px;
+        background-position: 50px 0px;
+      }
+    }
+
+    .inbox-item-small-right {
+      width: 35%;
+      padding-right: 20px;
+
+      @include media-breakpoint-only(lg) {
+        padding: 10px;
+        width: 40%;
+      }
+
+      @include media-breakpoint-only(md) {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+      }
+
+      @include media-breakpoint-only(xs) {
+        width: 45%;
+        padding: 0;
+      }
+
+      @media (max-width: 430px) {
+        min-height: 40%;
+        width: 100%;
+        background-size: 210px;
+        background-position: 10px 0px;
+        display: flex;
+        align-items: center;
       }
     }
   }
