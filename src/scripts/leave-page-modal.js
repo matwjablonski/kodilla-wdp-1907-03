@@ -3,15 +3,8 @@ let triggered = false; // so it is not that annoying :)
 
 const page = document.querySelector('html');
 
-function listenToLeaveFromTop (e) {
-  if (e.clientY <= 0) {
-    return true;
-  }
-  return false;
-}
-
 page.addEventListener('mouseleave', function (e) {
-  if (!triggered && listenToLeaveFromTop(e)) {
+  if (!triggered && e.clientY <= 0) {
     showModal('mouse-leave-modal');
     triggered = true;
   }
