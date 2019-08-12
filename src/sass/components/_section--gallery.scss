@@ -5,6 +5,10 @@
     display: flex;
     flex-direction: column;
 
+    @include media-breakpoint-down(md) {
+      margin-bottom: 32px;
+    }
+
     .my-tab-list {
       display: flex;
       text-transform: uppercase;
@@ -18,28 +22,30 @@
         align-items: center;
         justify-content: center;
         width: 25%;
-        border-bottom: 1px solid $product-border-color;
         font-size: 18px;
         font-weight: 400;
         height: 45px;
         border-right: 1px solid $product-border-color;
 
-        @include hover-only {
+        .gallery-tab-text {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0;
+          text-decoration: none;
+          color: $text-color;
+          height: 100%;
+          width: 100%;
+          border-bottom: 1px solid $product-border-color;
+
           &:hover {
             cursor: pointer;
+            border-bottom: transparent;
+            border-top: 4px solid $primary;
+            background-color: $product-background-color;
+            color: $primary;
           }
         }
-
-        .gallery-tab-text {
-          margin: 0;
-        }
-      }
-
-      .my-active {
-        border-bottom: transparent;
-        border-top: 4px solid $primary;
-        background-color: $product-background-color;
-        color: $primary;
       }
     }
 
@@ -89,19 +95,15 @@
             }
 
             .action-icon {
-              @include hover-only {
-                &:hover {
-                  color: $primary;
-                  background-color: transparent;
-                  border-color: $primary;
-                }
+              &:hover {
+                color: $primary;
+                background-color: transparent;
+                border-color: $primary;
               }
 
-              @include hover-only {
-                &:hover + .tooltip-box {
-                  visibility: visible;
-                  opacity: 1;
-                }
+              &:hover + .tooltip-box {
+                visibility: visible;
+                opacity: 1;
               }
             }
           }
@@ -203,10 +205,8 @@
         opacity: 0.5;
         background-color: $gallery-slider-color;
 
-        @include hover-only {
-          &:hover {
-            cursor: pointer;
-          }
+        &:hover {
+          cursor: pointer;
         }
 
         img {
@@ -228,11 +228,9 @@
         justify-content: center;
         align-items: center;
 
-        @include hover-only {
-          &:hover {
-            color: $primary;
-            cursor: pointer;
-          }
+        &:hover {
+          color: $primary;
+          cursor: pointer;
         }
       }
     }
@@ -240,6 +238,14 @@
 
   .gallery-big-photo {
     .gallery-box-image {
+      @include media-breakpoint-only(xs) {
+        display: none;
+      }
+
+      @include media-breakpoint-down(md) {
+        height: 450px;
+      }
+
       height: 100%;
       background-image: url("../images/Bed10.jpg");
       background-size: cover;
@@ -283,11 +289,9 @@
           outline: none;
           margin: 10px 0;
 
-          @include hover-only {
-            &:hover {
-              background-color: $primary;
-              cursor: pointer;
-            }
+          &:hover {
+            background-color: $primary;
+            cursor: pointer;
           }
         }
       }
