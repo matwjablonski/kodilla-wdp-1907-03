@@ -61,7 +61,7 @@
       width: 35%;
       background-image: url("../images/redChairNice.png");
       background-size: 190px;
-      background-position: 0px 9px;
+      background-position: 0 9px;
       background-repeat: no-repeat;
 
       @include media-breakpoint-only(lg) {
@@ -70,12 +70,12 @@
 
       @include media-breakpoint-only(md) {
         background-size: 120px;
-        background-position: 0px 35px;
+        background-position: 0 35px;
       }
 
       @media (max-width: 520px) {
         background-size: 150px;
-        background-position: 0px 25px;
+        background-position: 0 25px;
       }
 
       @media (max-width: 430px) {
@@ -150,7 +150,7 @@
 
       @include media-breakpoint-only(md) {
         background-size: 110px;
-        background-position: 0px 35px;
+        background-position: 0 35px;
       }
 
       @include media-breakpoint-only(sm) {
@@ -232,12 +232,12 @@
         min-height: 60%;
         width: 100%;
         background-size: 210px;
-        background-position: 70px 0px;
+        background-position: 70px 0;
       }
 
       @include media-breakpoint-only(xs) {
         background-size: 260px;
-        background-position: 0px 30px;
+        background-position: 0 30px;
         width: 55%;
       }
 
@@ -249,7 +249,7 @@
         min-height: 60%;
         width: 100%;
         background-size: 210px;
-        background-position: 50px 0px;
+        background-position: 50px 0;
       }
     }
 
@@ -278,7 +278,7 @@
         min-height: 40%;
         width: 100%;
         background-size: 210px;
-        background-position: 10px 0px;
+        background-position: 10px 0;
         display: flex;
         align-items: center;
       }
