@@ -1,66 +1,72 @@
 .deals {
   position: relative;
 
+  .hot-deals-head {
+    padding: 0 15px;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background-color: $text-color;
+    color: $white;
+    text-transform: uppercase;
+    z-index: 20;
+
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 50px;
+      margin-left: 22px;
+      display: inline-block;
+    }
+
+    .dots {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 22px;
+      @extend %hover-animation-time;
+
+      ul {
+        margin: 0;
+        padding-left: 1rem;
+        list-style: none;
+        transform: translateY(15px);
+        display: inline-block;
+
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
+
+          .hot-dot {
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: $product-border-color;
+
+            &.active,
+            &:hover {
+              background-color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .product-box {
+    border-top: 0;
+    position: relative;
+    top: -50px;
+
     .photo {
+      @extend %hover-animation-time;
       @include hover-only {
         &:hover {
           .stats,
           .center-button {
             opacity: 1;
-          }
-        }
-      }
-    }
-
-    .hot-deals-head {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 50px;
-      width: 100%;
-      background-color: $text-color;
-      color: $white;
-      text-transform: uppercase;
-
-      p {
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 50px;
-        margin-left: 22px;
-        display: inline-block;
-      }
-
-      .dots {
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        right: 22px;
-        @extend %hover-animation-time;
-
-        ul {
-          margin: 0;
-          padding-left: 1rem;
-          list-style: none;
-          transform: translateY(15px);
-          display: inline-block;
-
-          li {
-            display: inline-block;
-            margin-left: 0.5rem;
-
-            a {
-              display: block;
-              width: 13px;
-              height: 13px;
-              border-radius: 6px;
-              background-color: #e1e1e1;
-
-              &.active,
-              &:hover {
-                background-color: $primary;
-              }
-            }
           }
         }
       }
@@ -79,6 +85,7 @@
     .stats {
       text-align: center;
       opacity: 0;
+      position: relative;
     }
 
     .circle {
@@ -215,107 +222,141 @@
       top: 0;
       left: 0;
       height: 100%;
+      opacity: 0;
+    }
+
+    .active-photo {
+      opacity: 1;
     }
   }
 }
 
 @media (max-width: 576px) {
-  .product-box {
-    display: none;
-  }
+  .deals {
+    .product-box {
+      display: none;
+    }
 
-  .banner {
-    height: 524px;
-    .slogan {
-      .title {
-        margin-top: 30px;
-        font-size: 48px;
-        line-height: 60px;
-      }
+    .hot-deals-head {
+      display: none;
+    }
 
-      .postscript {
-        font-size: 17px;
+    .banner {
+      height: 524px;
+
+      .slogan {
+        .title {
+          margin-top: 30px;
+          font-size: 48px;
+          line-height: 60px;
+        }
+
+        .postscript {
+          font-size: 17px;
+        }
       }
     }
   }
 }
 
 @media (min-width: 577px) {
-  .product-box {
-    display: none;
-  }
+  .deals {
+    .product-box {
+      display: none;
+    }
 
-  .banner {
-    height: 524px;
+    .hot-deals-head {
+      display: none;
+    }
 
-    .slogan {
-      .title {
-        margin-top: 60px;
-        font-size: 54px;
-        line-height: 70px;
-      }
+    .banner {
+      height: 485px;
 
-      .postscript {
-        font-size: 24px;
+      .slogan {
+        .title {
+          margin-top: 60px;
+          font-size: 54px;
+          line-height: 70px;
+        }
+
+        .postscript {
+          font-size: 24px;
+        }
       }
     }
   }
 }
 
 @media (min-width: 993px) {
-  .product-box {
-    display: block;
+  .deals {
+    .product-box {
+      display: none;
 
-    .stats {
-      height: 125px;
-    }
-
-    .circle {
-      height: 60px;
-      width: 60px;
-
-      .value {
-        font-size: 24px;
-        line-height: 26px;
-        margin-top: 8px;
+      .stats {
+        height: 125px;
       }
 
-      .time {
-        font-size: 12px;
+      .circle {
+        height: 60px;
+        width: 60px;
+
+        .value {
+          font-size: 24px;
+          line-height: 26px;
+          margin-top: 8px;
+        }
+
+        .time {
+          font-size: 12px;
+        }
       }
     }
-  }
 
-  .banner {
-    height: 512px;
+    .hot-deals-head {
+      display: block;
+    }
+
+    .active-hot-deal {
+      display: block;
+    }
+
+    .banner {
+      height: 487px;
+    }
   }
 }
 
 @media (min-width: 1200px) {
-  .product-box {
-    display: block;
+  .deals {
+    .product-box {
+      display: none;
 
-    .stats {
-      height: 90px;
-    }
-
-    .circle {
-      height: 70px;
-      width: 70px;
-
-      .value {
-        font-size: 24px;
-        line-height: 28px;
-        margin-top: 10px;
+      .stats {
+        height: 90px;
       }
 
-      .time {
-        font-size: 13px;
+      .circle {
+        height: 70px;
+        width: 70px;
+
+        .value {
+          font-size: 24px;
+          line-height: 28px;
+          margin-top: 10px;
+        }
+
+        .time {
+          font-size: 13px;
+        }
       }
     }
-  }
 
-  .banner {
-    height: 524px;
+    .active-hot-deal {
+      display: block;
+    }
+
+    .banner {
+      height: 502px;
+    }
   }
 }

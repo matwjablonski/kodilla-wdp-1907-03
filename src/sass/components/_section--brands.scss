@@ -1,0 +1,47 @@
+.section--brands {
+  margin: 0 0 5rem;
+
+  .brands-box {
+    border-top: 1px solid $product-border-color;
+    border-bottom: 1px solid $product-border-color;
+
+    .brands-slider {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 0;
+
+      .brands-arrow-box {
+        height: 92px;
+        width: 33px;
+        background-color: $text-color;
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $white;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+
+          @include hover-only {
+            &:hover {
+              cursor: pointer;
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      .logo-box {
+        width: 143px;
+        height: 92px;
+        border: 1px solid $product-border-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
