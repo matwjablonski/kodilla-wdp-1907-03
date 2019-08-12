@@ -40,6 +40,12 @@ footer {
         display: inline-block;
       }
     }
+
+    .pay-wrap {
+      width: 100%;
+      display: flex;
+      //justify-content: flex-end;
+    }
   }
 
   .bottom-bar {
@@ -97,10 +103,25 @@ footer {
   .socialmedia {
     text-align: center;
   }
+
+  .pay-wrap {
+    justify-content: center;
+  }
 }
 
 @include media-breakpoint-only(sm) {
   .menu-wrapper {
     text-align: center;
+  }
+
+  .pay-wrap {
+    justify-content: center;
+  }
+}
+
+@include media-breakpoint-between(md, xl) {
+  .pay-wrap {
+    justify-content: flex-end;
+    padding-right: 20px;
   }
 }
