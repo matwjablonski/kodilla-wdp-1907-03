@@ -3,4 +3,6 @@ import './tabs';
 import './hot-deals-banner';
 import './hot-deals-product';
 import './carousel-posts';
+import './shopping-cart';
 import './brands-slider';
+
