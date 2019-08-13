@@ -1,4 +1,5 @@
 import { carouselNewFurniture } from './carousel-new-furniture';
+import { getCartBtns } from './shopping-cart';
 
 let filterValue = 'bed';
 const filteredOutput = document.getElementById('filtered-list-output');
@@ -33,6 +34,7 @@ function showList (cat) {
     newCat.classList.add('show');
   }, animationOffset);
   carouselNewFurniture();
+  getCartBtns();
 }
 
 function hideList (cat) {
