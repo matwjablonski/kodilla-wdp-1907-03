@@ -1,12 +1,27 @@
 const carouselBox = document.querySelector('#brands-carousel');
-const items = document.querySelectorAll('.logo-box');
-const nextBtn = document.querySelector('#next');
-const prevBtn = document.querySelector('#prev');
+
+const box = document.querySelector('.brands-box');
+(items = document.querySelectorAll('.logo-box')),
+(nextBtn = document.querySelector('#next')),
+(prevBtn = document.querySelector('#prev')),
+(threshold = 75), // required min distance traveled to be considered swipe
+(allowedTime = 200); // maximum time allowed to travel that distance
+let startX;
+
+let startY;
+
+let dist;
+
+let elapsedTime;
+
+let startTime;
 
 let valueToTranslate = carouselBox.clientWidth;
+
 let translate = 0;
 
 let maxCounter = Math.ceil((items[0].clientWidth * items.length) / valueToTranslate);
+
 let counter = 1;
 
 window.addEventListener('resize', function () {
@@ -18,18 +33,7 @@ window.addEventListener('resize', function () {
   }, 500);
 });
 
-nextBtn.addEventListener('click', function () {
-  if (counter < maxCounter) {
-    translate = valueToTranslate * counter;
-    carouselBox.style.transform = `translateX(-${translate}px)`;
-    counter += 1;
-  } else {
-    counter = 1;
-    carouselBox.style.transform = `translateX(0)`;
-  }
-});
-
-prevBtn.addEventListener('click', function () {
+swipeLeft = () => {
   if (counter > 1) {
     counter = counter - 1;
     translate = translate - valueToTranslate;
@@ -39,4 +43,74 @@ prevBtn.addEventListener('click', function () {
     translate = valueToTranslate * (counter - 1);
     carouselBox.style.transform = `translateX(-${translate}px)`;
   }
+};
+
+swipeRight = () => {
+  if (counter < maxCounter) {
+    translate = valueToTranslate * counter;
+    carouselBox.style.transform = `translateX(-${translate}px)`;
+    counter += 1;
+  } else {
+    counter = 1;
+    carouselBox.style.transform = `translateX(0)`;
+  }
+};
+// click to slide
+nextBtn.addEventListener('click', function () {
+  swipeRight();
 });
+
+prevBtn.addEventListener('click', function () {
+  swipeLeft();
+});
+
+// touch to slide
+window.addEventListener(
+  'load',
+  function () {
+    function handleswipe (right) {
+      if (right) swipeRight();
+      else {
+        swipeLeft();
+      }
+    }
+
+    box.addEventListener(
+      'touchstart',
+      function (event) {
+        const touch = event.changedTouches[0];
+        dist = 0;
+        startX = touch.pageX;
+        startY = touch.pageY;
+        startTime = new Date().getTime();
+        event.preventDefault();
+      },
+      false
+    );
+
+    box.addEventListener(
+      'touchmove',
+      function (event) {
+        event.preventDefault();
+      },
+      false
+    );
+
+    box.addEventListener(
+      'touchend',
+      function (event) {
+        const touch = event.changedTouches[0];
+        dist = touch.pageX - startX;
+        elapsedTime = new Date().getTime() - startTime;
+        const swipe_right =
+          elapsedTime <= allowedTime &&
+          dist >= threshold &&
+          Math.abs(touch.pageY - startY) <= 50;
+        handleswipe(swipe_right);
+        event.preventDefault();
+      },
+      false
+    );
+  },
+  false
+);
