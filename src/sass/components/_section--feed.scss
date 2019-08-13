@@ -3,7 +3,7 @@
   p {
     font-size: 14px;
     line-height: 24px;
-    color: rgb(103, 103, 103);
+    color: $text-color2;
     text-align: justify;
   }
 
@@ -20,6 +20,6 @@
     border-radius: 4px;
     width: 60px;
     height: 50px;
-    background-size: contain;
+    object-fit: cover;
   }
 }
