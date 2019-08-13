@@ -1,6 +1,7 @@
 const previous = document.getElementById('button-previous');
 const next = document.getElementById('button-next');
 const images = document.querySelectorAll('.advertisement-photo');
+const banner = document.getElementById('banner');
 
 const imagesLen = images.length;
 
@@ -23,6 +24,7 @@ function nextPicture () {
 }
 
 next.addEventListener('click', nextPicture);
+banner.addEventListener('touchmove', nextPicture);
 
 function prevPicture () {
   let i = isActive();
@@ -35,3 +37,4 @@ function prevPicture () {
 }
 
 previous.addEventListener('click', prevPicture);
+banner.addEventListener('touchend', prevPicture);
