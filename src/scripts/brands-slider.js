@@ -1,31 +1,21 @@
 const carouselBox = document.querySelector('#brands-carousel');
-
 const box = document.querySelector('.brands-box');
-(items = document.querySelectorAll('.logo-box')),
-(nextBtn = document.querySelector('#next')),
-(prevBtn = document.querySelector('#prev')),
-(threshold = 75), // required min distance traveled to be considered swipe
-(allowedTime = 200); // maximum time allowed to travel that distance
+const items = document.querySelectorAll('.logo-box');
+const nextBtn = document.querySelector('#next');
+const prevBtn = document.querySelector('#prev');
+const threshold = 75; // required min distance traveled to be considered swipe(allowedTime = 200; // maximum time allowed to travel that distance
 let startX;
-
 let startY;
-
 let dist;
-
 let elapsedTime;
-
 let startTime;
-
 let valueToTranslate = carouselBox.clientWidth;
-
 let translate = 0;
-
 let maxCounter = Math.ceil((items[0].clientWidth * items.length) / valueToTranslate);
-
 let counter = 1;
 
-window.addEventListener('resize', function () {
-  this.setTimeout(function () {
+window.addEventListener('resize', function() {
+  this.setTimeout(function() {
     valueToTranslate = carouselBox.clientWidth;
     maxCounter = Math.ceil((items[0].clientWidth * items.length) / valueToTranslate);
     counter = 1;
@@ -56,19 +46,19 @@ swipeRight = () => {
   }
 };
 // click to slide
-nextBtn.addEventListener('click', function () {
+nextBtn.addEventListener('click', function() {
   swipeRight();
 });
 
-prevBtn.addEventListener('click', function () {
+prevBtn.addEventListener('click', function() {
   swipeLeft();
 });
 
 // touch to slide
 window.addEventListener(
   'load',
-  function () {
-    function handleswipe (right) {
+  function() {
+    function handleswipe(right) {
       if (right) swipeRight();
       else {
         swipeLeft();
@@ -77,7 +67,7 @@ window.addEventListener(
 
     box.addEventListener(
       'touchstart',
-      function (event) {
+      function(event) {
         const touch = event.changedTouches[0];
         dist = 0;
         startX = touch.pageX;
@@ -90,7 +80,7 @@ window.addEventListener(
 
     box.addEventListener(
       'touchmove',
-      function (event) {
+      function(event) {
         event.preventDefault();
       },
       false
@@ -98,7 +88,7 @@ window.addEventListener(
 
     box.addEventListener(
       'touchend',
-      function (event) {
+      function(event) {
         const touch = event.changedTouches[0];
         dist = touch.pageX - startX;
         elapsedTime = new Date().getTime() - startTime;
