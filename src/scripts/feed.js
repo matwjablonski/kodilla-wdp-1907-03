@@ -1,6 +1,7 @@
 const feed_item = document.querySelectorAll('.feed-item');
 const pagination = document.querySelector('#pagination');
 const feed = document.querySelector('.feed');
+const dots = document.querySelectorAll('.dot');
 const threshold = 75;
 const allowedTime = 200;
 const valueToTranslate = feed.clientWidth;
@@ -23,8 +24,8 @@ feed_item.forEach((elem, index) => {
   pagination.appendChild(dot);
 });
 
-const dot = document.querySelectorAll('.dot');
-dot.forEach((elem, index) => {
+
+dots.forEach((elem, index) => {
   elem.addEventListener('click', function (event) {
     remove();
     elem.firstChild.classList.add('active');
@@ -37,8 +38,7 @@ dot.forEach((elem, index) => {
 });
 
 remove = () => {
-  const dot = document.querySelectorAll('.dot');
-  dot.forEach((elem, index) => {
+  dots.forEach((elem, index) => {
     elem.firstChild.classList.remove('active');
   });
 };
