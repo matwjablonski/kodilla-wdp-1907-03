@@ -1,8 +1,7 @@
 const feed_item = document.querySelectorAll('.feed-item');
 const pagination = document.querySelector('#pagination');
 const feed = document.querySelector('.feed');
-const dots = document.querySelectorAll('.dot');
-const threshold = 75;
+const threshold = 150;
 const allowedTime = 200;
 const valueToTranslate = feed.clientWidth;
 let startX;
@@ -24,7 +23,7 @@ feed_item.forEach((elem, index) => {
   pagination.appendChild(dot);
 });
 
-
+const dots = document.querySelectorAll('.dot');
 dots.forEach((elem, index) => {
   elem.addEventListener('click', function (event) {
     remove();
@@ -33,46 +32,56 @@ dots.forEach((elem, index) => {
     translate = valueToTranslate * counter;
     feed_item.forEach(elem => {
       elem.style.transform = `translateX(-${translate}px)`;
+      
     });
   });
 });
 
+//first-dot
+dots[0].firstChild.classList.add('active') 
+
+//remove/clear all dots
 remove = () => {
-  dots.forEach((elem, index) => {
+  dots.forEach(elem => {
     elem.firstChild.classList.remove('active');
   });
 };
 
 swipeR = () => {
+  remove();
   if (counter1 < nOfSlides) {
     translate1 = valueToTranslate * counter1;
     feed_item.forEach(elem => {
       elem.style.transform = `translateX(-${translate1}px)`;
+      console.log(counter1);
+      dots[counter1].firstChild.classList.add('active');
+      
     });
     counter1 += 1;
-    remove();
   }
 };
 
 swipeL = () => {
+  remove();
   if (counter1 > 1) {
     counter1 = counter1 - 1;
     translate1 = translate1 - valueToTranslate;
     feed_item.forEach(elem => {
       elem.style.transform = `translateX(-${translate1}px)`;
+      dots[counter1-1].firstChild.classList.add('active')
     });
   } else if (counter1 === 1) {
     counter1 = nOfSlides;
     translate1 = valueToTranslate * (counter1 - 1);
     feed_item.forEach(elem => {
       elem.style.transform = `translateX(-${translate1}px)`;
+      dots[counter1-1].firstChild.classList.add('active')
     });
-    remove();
   }
 };
 
 // touch
-function swipe (right) {
+function swipe(right) {
   if (right) swipeR();
   else {
     swipeL();
@@ -109,7 +118,7 @@ feed.addEventListener(
     const swipe_r =
       elapsedTime <= allowedTime &&
       dist >= threshold &&
-      Math.abs(touch.pageY - startY) <= 50;
+      Math.abs(touch.pageY - startY) <= 150;
     swipe(swipe_r);
     event.preventDefault();
   },
