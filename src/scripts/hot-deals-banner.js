@@ -2,8 +2,8 @@ const previous = document.getElementById('button-previous');
 const next = document.getElementById('button-next');
 const images = document.querySelectorAll('.advertisement-photo');
 const banner = document.getElementById('banner');
-const threshold = 75; // required min distance traveled to be considered swipe
-const allowedTime = 200; // maximum time allowed to travel that distance
+const threshold = 40; // required min distance traveled to be considered swipe
+const allowedTime = 300; // maximum time allowed to travel that distance
 let startX;
 let dist;
 let elapsedTime;
