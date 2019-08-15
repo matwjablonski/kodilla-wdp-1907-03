@@ -271,10 +271,7 @@ header {
 
         .main-menu-btn-container {
           width: auto;
-          // display: flex;
-          // justify-content: flex-end;
           display: block;
-          // margin: 0 auto;
 
           .main-menu-btn {
             width: 40px;
@@ -304,7 +301,6 @@ header {
         height: auto;
         color: $text-color;
         padding: 10px;
-        // width: 90%;
         flex: 1 0 95%;
 
         .category {
