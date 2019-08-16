@@ -234,6 +234,7 @@ header {
 
       .container > .row {
         height: auto;
+        max-width: 100%;
       }
 
       .menu-list-container {
@@ -266,17 +267,17 @@ header {
 
       .menu-search-bar {
         display: flex;
+        width: 100%;
 
         .main-menu-btn-container {
-          width: 15%;
-          display: flex;
-          justify-content: start;
+          width: auto;
           display: block;
 
           .main-menu-btn {
             width: 40px;
             height: 40px;
             margin-top: 12px;
+            padding: 0;
             background: transparent;
             border: none;
             outline: none;
@@ -300,7 +301,13 @@ header {
         height: auto;
         color: $text-color;
         padding: 10px;
-        width: 85%;
+        flex: 1 0 95%;
+
+        .category {
+          select {
+            width: 100%;
+          }
+        }
 
         .category,
         .search-field {
@@ -311,7 +318,7 @@ header {
 
         .search-field {
           input {
-            width: 90%;
+            width: 95%;
           }
         }
       }
