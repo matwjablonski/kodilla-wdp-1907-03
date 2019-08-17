@@ -9,37 +9,51 @@
       margin-bottom: 32px;
     }
 
-    .my-tab-list {
-      display: flex;
-      text-transform: uppercase;
-      border-top: 1px solid $product-border-color;
-      border-left: 1px solid $product-border-color;
-      padding: 0;
-      margin-bottom: 0;
-
-      .tab-name {
+    .gallery-picture {
+      .my-tab-list {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 25%;
-        font-size: 18px;
-        font-weight: 400;
-        height: 45px;
-        border-right: 1px solid $product-border-color;
+        text-transform: uppercase;
+        border-left: 1px solid $product-border-color;
+        padding: 0;
+        margin-bottom: 0;
 
-        .gallery-tab-text {
+        .tab-name {
           display: flex;
           align-items: center;
           justify-content: center;
-          margin: 0;
-          text-decoration: none;
-          color: $text-color;
-          height: 100%;
-          width: 100%;
-          border-bottom: 1px solid $product-border-color;
+          width: 25%;
+          font-size: 18px;
+          font-weight: 400;
+          height: 45px;
+          border-right: 1px solid $product-border-color;
 
-          &:hover {
-            cursor: pointer;
+          .gallery-tab-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            text-decoration: none;
+            color: $text-color;
+            height: 100%;
+            width: 100%;
+            border-bottom: 1px solid $product-border-color;
+            border-top: 1px solid $product-border-color;
+
+            @media (max-width: 500px) {
+              font-size: 14px;
+              padding: 20px;
+            }
+
+            @include hover-only {
+              &:hover {
+                cursor: pointer;
+                border-bottom: transparent;
+                color: $primary;
+              }
+            }
+          }
+
+          .my-active {
             border-bottom: transparent;
             border-top: 4px solid $primary;
             background-color: $product-background-color;
@@ -47,190 +61,1022 @@
           }
         }
       }
-    }
 
-    .gallery-parts {
-      background-color: $product-background-color;
-      position: relative;
-      border-left: 1px solid $product-border-color;
-      border-right: 1px solid $product-border-color;
+      //FEATURED
+      .gallery-featured {
+        display: none;
 
-      .gallery-topseller {
-        height: 450px;
-        background-image: url("../images/redChairNice.png");
-        background-size: 350px;
-        background-position: 35px 30px;
-        background-repeat: no-repeat;
+        .gallery-picture-box {
+          height: 450px;
+          background-image: url("../images/gallery/fur1.png");
+          background-size: 400px;
+          background-position: 65px 30px;
+          background-repeat: no-repeat;
+          background-color: $product-background-color;
+          position: relative;
+          border-left: 1px solid $product-border-color;
+          border-right: 1px solid $product-border-color;
 
-        .gallery-actions {
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
+          .gallery-actions {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-          .action-box {
-            margin: 10px 10px 0;
+            .action-box {
+              margin: 10px 10px 0;
 
-            .tooltip-box {
-              position: relative;
-              visibility: hidden;
-              padding: 7px 10px;
-              font-size: 12px;
-              margin-left: 10px;
+              .tooltip-box {
+                position: relative;
+                visibility: hidden;
+                padding: 7px 10px;
+                font-size: 12px;
+                margin-left: 10px;
+                background-color: $text-color;
+                color: $white;
+                opacity: 0;
+                transition: opacity 250ms;
+                text-transform: capitalize;
+
+                &::before {
+                  content: "";
+                  position: absolute;
+                  top: 10px;
+                  left: -10px;
+                  border-color: transparent $text-color;
+                  border-style: solid;
+                  border-width: 6px 10px 6px 0;
+                }
+              }
+
+              .action-icon {
+                @include hover-only {
+                  &:hover {
+                    color: $primary;
+                    background-color: transparent;
+                    border-color: $primary;
+                  }
+                }
+
+                @include hover-only {
+                  &:hover + .tooltip-box {
+                    visibility: visible;
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+
+          .content {
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 3px 6px rgba(1, 2, 2, 0.24);
+            width: 253px;
+            height: 96px;
+            position: relative;
+            position: absolute;
+            bottom: 30px;
+            right: 1px;
+            background-color: $white;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-style: solid;
+              border-width: 30px 30px 0 0;
+              border-color: $text-color transparent;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              border-style: solid;
+              border-width: 0 0 30px 30px;
+              border-color: $text-color transparent;
+              right: 0;
+              bottom: 0;
+            }
+
+            h5 {
+              color: $text-color;
+              font-size: 16px;
+              line-height: 24px;
+              letter-spacing: 1px;
+            }
+
+            .stars {
+              span {
+                cursor: pointer;
+                text-decoration: none;
+                color: rgb(42, 42, 42);
+                @extend .far;
+                @extend .fa-star;
+
+                &.full {
+                  @extend .fas;
+                }
+              }
+            }
+
+            .stars-high {
+              span {
+                text-decoration: none;
+                color: $primary;
+                @extend .far;
+                @extend .fa-star;
+
+                &.full {
+                  @extend .fas;
+                }
+              }
+            }
+          }
+
+          .circle-price {
+            position: absolute;
+            width: 105px;
+            height: 105px;
+            background-color: $text-color;
+            opacity: 0.6;
+            border-radius: 50%;
+            bottom: 110px;
+            right: 75px;
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .current-price {
+              font-size: 20px;
+              font-weight: 500;
+              margin-bottom: 0;
+              margin-top: 20px;
+            }
+
+            .previous-price {
+              font-size: 16px;
+              text-decoration: line-through;
+            }
+          }
+        }
+
+        .gallery-slider-container {
+          border-top: 1px solid $product-border-color;
+          border-bottom: 1px solid $product-border-color;
+
+          .gallery-slider-pictures {
+            overflow-x: hidden;
+            padding: 8px 33px;
+
+            .gallery-slider-line {
+              display: flex;
+              transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+              .gallery-slide-box {
+                display: flex;
+                justify-content: space-around;
+                flex: 1 0 16.66%;
+
+                @include media-breakpoint-only(lg) {
+                  flex: 1 0 25%;
+                }
+
+                @include media-breakpoint-down(sm) {
+                  flex: 1 0 25%;
+                }
+
+                @media (max-width: 460px) {
+                  flex: 1 0 33.33%;
+                }
+
+                @media (max-width: 360px) {
+                  flex: 1 0 50%;
+                }
+
+                .gallery-slide-image {
+                  opacity: 0.5;
+                  background-color: $gallery-slider-color;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  @include hover-only {
+                    &:hover {
+                      cursor: pointer;
+                    }
+                  }
+
+                  img {
+                    height: 70px;
+                    width: 70px;
+                  }
+                }
+              }
+            }
+          }
+
+          .gallery-slider-nav {
+            position: relative;
+
+            .gallery-arrow-box {
+              height: 70px;
+              width: 33px;
               background-color: $text-color;
               color: $white;
-              opacity: 0;
-              transition: opacity 250ms;
-              text-transform: capitalize;
+              display: flex;
+              justify-content: center;
+              align-items: center;
 
-              &::before {
-                content: "";
-                position: absolute;
-                top: 10px;
-                left: -10px;
-                border-color: transparent $text-color;
-                border-style: solid;
-                border-width: 6px 10px 6px 0;
+              @include hover-only {
+                &:hover {
+                  color: $primary;
+                  cursor: pointer;
+                }
               }
             }
+            .gallery-arrow-prev {
+              position: absolute;
+              top: -78px;
+              left: 0;
+            }
 
-            .action-icon {
-              &:hover {
-                color: $primary;
-                background-color: transparent;
-                border-color: $primary;
-              }
-
-              &:hover + .tooltip-box {
-                visibility: visible;
-                opacity: 1;
-              }
+            .gallery-arrow-next {
+              position: absolute;
+              top: -78px;
+              right: 0;
             }
           }
         }
+      }
 
-        .content {
-          text-align: center;
-          padding: 20px;
-          box-shadow: 0 3px 6px rgba(1, 2, 2, 0.24);
-          width: 253px;
-          height: 96px;
+      //TOP SELLER
+      .gallery-topseller {
+        .gallery-picture-box {
+          height: 450px;
+          background-image: url("../images/redChairNice.png");
+          background-size: 350px;
+          background-position: 35px 30px;
+          background-repeat: no-repeat;
+          background-color: $product-background-color;
           position: relative;
-          position: absolute;
-          bottom: 30px;
-          right: 1px;
-          background-color: $white;
+          border-left: 1px solid $product-border-color;
+          border-right: 1px solid $product-border-color;
 
-          &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-style: solid;
-            border-width: 30px 30px 0 0;
-            border-color: $text-color transparent;
+          @include media-breakpoint-down(xs) {
+            background-size: 300px;
           }
 
-          &::after {
-            content: "";
-            position: absolute;
-            border-style: solid;
-            border-width: 0 0 30px 30px;
-            border-color: $text-color transparent;
-            right: 0;
-            bottom: 0;
+          @media (max-width: 400px) {
+            background-size: 250px;
           }
 
-          h5 {
-            color: $text-color;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: 1px;
-          }
+          .gallery-actions {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-          .stars {
-            a {
-              text-decoration: none;
-              color: rgb(42, 42, 42);
-              @extend .far;
-              @extend .fa-star;
+            .action-box {
+              margin: 10px 10px 0;
 
-              &.full {
-                @extend .fas;
+              .tooltip-box {
+                position: relative;
+                visibility: hidden;
+                padding: 7px 10px;
+                font-size: 12px;
+                margin-left: 10px;
+                background-color: $text-color;
+                color: $white;
+                opacity: 0;
+                transition: opacity 250ms;
+                text-transform: capitalize;
+                z-index: 3;
+
+                &::before {
+                  content: "";
+                  position: absolute;
+                  top: 10px;
+                  left: -10px;
+                  border-color: transparent $text-color;
+                  border-style: solid;
+                  border-width: 6px 10px 6px 0;
+                }
               }
+
+              .action-icon {
+                @include hover-only {
+                  &:hover {
+                    color: $primary;
+                    background-color: transparent;
+                    border-color: $primary;
+                  }
+                }
+
+                @include hover-only {
+                  &:hover + .tooltip-box {
+                    visibility: visible;
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+
+          .content {
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 3px 6px rgba(1, 2, 2, 0.24);
+            width: 253px;
+            height: 96px;
+            position: relative;
+            position: absolute;
+            bottom: 30px;
+            right: 1px;
+            background-color: $white;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-style: solid;
+              border-width: 30px 30px 0 0;
+              border-color: $text-color transparent;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              border-style: solid;
+              border-width: 0 0 30px 30px;
+              border-color: $text-color transparent;
+              right: 0;
+              bottom: 0;
+            }
+
+            h5 {
+              color: $text-color;
+              font-size: 16px;
+              line-height: 24px;
+              letter-spacing: 1px;
+            }
+
+            .stars {
+              span {
+                cursor: pointer;
+                text-decoration: none;
+                color: rgb(42, 42, 42);
+                @extend .far;
+                @extend .fa-star;
+
+                &.full {
+                  @extend .fas;
+                }
+              }
+            }
+
+            .stars-high {
+              span {
+                text-decoration: none;
+                color: $primary;
+                @extend .far;
+                @extend .fa-star;
+
+                &.full {
+                  @extend .fas;
+                }
+              }
+            }
+          }
+
+          .circle-price {
+            position: absolute;
+            width: 105px;
+            height: 105px;
+            background-color: $text-color;
+            opacity: 0.6;
+            border-radius: 50%;
+            bottom: 110px;
+            right: 75px;
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .current-price {
+              font-size: 20px;
+              font-weight: 500;
+              margin-bottom: 0;
+              margin-top: 20px;
+            }
+
+            .previous-price {
+              font-size: 16px;
+              text-decoration: line-through;
             }
           }
         }
 
-        .circle-price {
-          position: absolute;
-          width: 105px;
-          height: 105px;
-          background-color: $text-color;
-          opacity: 0.6;
-          border-radius: 50%;
-          bottom: 110px;
-          right: 75px;
-          color: $white;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+        .gallery-slider-container {
+          border-top: 1px solid $product-border-color;
+          border-bottom: 1px solid $product-border-color;
 
-          .current-price {
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 0;
-            margin-top: 20px;
+          .gallery-slider-pictures {
+            overflow-x: hidden;
+            padding: 8px 33px;
+
+            .gallery-slider-line-topseller {
+              display: flex;
+              transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+              .gallery-slide-box-topseller {
+                display: flex;
+                justify-content: space-around;
+                flex: 1 0 16.66%;
+
+                @include media-breakpoint-only(lg) {
+                  flex: 1 0 25%;
+                }
+
+                @include media-breakpoint-down(sm) {
+                  flex: 1 0 25%;
+                }
+
+                @media (max-width: 460px) {
+                  flex: 1 0 33.33%;
+                }
+
+                @media (max-width: 360px) {
+                  flex: 1 0 50%;
+                }
+
+                .gallery-slide-image {
+                  opacity: 0.5;
+                  background-color: $gallery-slider-color;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  @include hover-only {
+                    &:hover {
+                      cursor: pointer;
+                    }
+                  }
+
+                  img {
+                    height: 70px;
+                    width: 70px;
+                  }
+                }
+
+                .slide-visible {
+                  opacity: 1;
+                }
+              }
+            }
           }
 
-          .previous-price {
-            font-size: 16px;
-            text-decoration: line-through;
+          .gallery-slider-nav {
+            position: relative;
+
+            .gallery-arrow-box {
+              height: 70px;
+              width: 33px;
+              background-color: $text-color;
+              color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              @include hover-only {
+                &:hover {
+                  color: $primary;
+                  cursor: pointer;
+                }
+              }
+            }
+
+            .gallery-arrow-prev {
+              position: absolute;
+              top: -78px;
+              left: 0;
+            }
+
+            .gallery-arrow-next {
+              position: absolute;
+              top: -78px;
+              right: 0;
+            }
           }
         }
       }
-    }
 
-    .gallery-slider {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: 1px solid $product-border-color;
-      padding: 8px;
+      //SALE OFF
+      .gallery-saleoff {
+        display: none;
 
-      .gallery-slide-box {
-        height: 70px;
-        width: 70px;
-        opacity: 0.5;
-        background-color: $gallery-slider-color;
+        .gallery-picture-box {
+          height: 450px;
+          background-image: url("../images/gallery/fur7.png");
+          background-size: 400px;
+          background-position: 65px 30px;
+          background-repeat: no-repeat;
+          background-color: $product-background-color;
+          position: relative;
+          border-left: 1px solid $product-border-color;
+          border-right: 1px solid $product-border-color;
 
-        &:hover {
-          cursor: pointer;
+          .gallery-actions {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .action-box {
+              margin: 10px 10px 0;
+
+              .tooltip-box {
+                position: relative;
+                visibility: hidden;
+                padding: 7px 10px;
+                font-size: 12px;
+                margin-left: 10px;
+                background-color: $text-color;
+                color: $white;
+                opacity: 0;
+                transition: opacity 250ms;
+                text-transform: capitalize;
+
+                &::before {
+                  content: "";
+                  position: absolute;
+                  top: 10px;
+                  left: -10px;
+                  border-color: transparent $text-color;
+                  border-style: solid;
+                  border-width: 6px 10px 6px 0;
+                }
+              }
+
+              .action-icon {
+                @include hover-only {
+                  &:hover {
+                    color: $primary;
+                    background-color: transparent;
+                    border-color: $primary;
+                  }
+                }
+
+                @include hover-only {
+                  &:hover + .tooltip-box {
+                    visibility: visible;
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+
+          .content {
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 3px 6px rgba(1, 2, 2, 0.24);
+            width: 253px;
+            height: 96px;
+            position: relative;
+            position: absolute;
+            bottom: 30px;
+            right: 1px;
+            background-color: $white;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-style: solid;
+              border-width: 30px 30px 0 0;
+              border-color: $text-color transparent;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              border-style: solid;
+              border-width: 0 0 30px 30px;
+              border-color: $text-color transparent;
+              right: 0;
+              bottom: 0;
+            }
+
+            h5 {
+              color: $text-color;
+              font-size: 16px;
+              line-height: 24px;
+              letter-spacing: 1px;
+            }
+
+            .stars {
+              span {
+                cursor: pointer;
+                text-decoration: none;
+                color: rgb(42, 42, 42);
+                @extend .far;
+                @extend .fa-star;
+
+                &.full {
+                  @extend .fas;
+                }
+              }
+            }
+
+            .stars-high {
+              span {
+                text-decoration: none;
+                color: $primary;
+                @extend .far;
+                @extend .fa-star;
+
+                &.full {
+                  @extend .fas;
+                }
+              }
+            }
+          }
+
+          .circle-price {
+            position: absolute;
+            width: 105px;
+            height: 105px;
+            background-color: $text-color;
+            opacity: 0.6;
+            border-radius: 50%;
+            bottom: 110px;
+            right: 75px;
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .current-price {
+              font-size: 20px;
+              font-weight: 500;
+              margin-bottom: 0;
+              margin-top: 20px;
+            }
+
+            .previous-price {
+              font-size: 16px;
+              text-decoration: line-through;
+            }
+          }
         }
 
-        img {
-          height: 70px;
-          width: 70px;
+        .gallery-slider-container {
+          border-top: 1px solid $product-border-color;
+          border-bottom: 1px solid $product-border-color;
+
+          .gallery-slider-pictures {
+            overflow-x: hidden;
+            padding: 8px 33px;
+
+            .gallery-slider-line-saleoff {
+              display: flex;
+              transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+              .gallery-slide-box {
+                display: flex;
+                justify-content: space-around;
+                flex: 1 0 16.66%;
+
+                @include media-breakpoint-only(lg) {
+                  flex: 1 0 25%;
+                }
+
+                @include media-breakpoint-down(sm) {
+                  flex: 1 0 25%;
+                }
+
+                @media (max-width: 460px) {
+                  flex: 1 0 33.33%;
+                }
+
+                @media (max-width: 360px) {
+                  flex: 1 0 50%;
+                }
+
+                .gallery-slide-image {
+                  opacity: 0.5;
+                  background-color: $gallery-slider-color;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  @include hover-only {
+                    &:hover {
+                      cursor: pointer;
+                    }
+                  }
+
+                  img {
+                    height: 70px;
+                    width: 70px;
+                  }
+                }
+              }
+            }
+          }
+
+          .gallery-slider-nav {
+            position: relative;
+
+            .gallery-arrow-box {
+              height: 70px;
+              width: 33px;
+              background-color: $text-color;
+              color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              @include hover-only {
+                &:hover {
+                  color: $primary;
+                  cursor: pointer;
+                }
+              }
+            }
+
+            .gallery-arrow-prev {
+              position: absolute;
+              top: -78px;
+              left: 0;
+            }
+
+            .gallery-arrow-next {
+              position: absolute;
+              top: -78px;
+              right: 0;
+            }
+          }
         }
       }
 
-      .slider-active {
-        opacity: 1;
-      }
+      //TOP RATED
+      .gallery-toprated {
+        display: none;
 
-      .gallery-arrow-box {
-        height: 70px;
-        width: 33px;
-        background-color: $text-color;
-        color: $white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        .gallery-picture-box {
+          height: 450px;
+          background-image: url("../images/gallery/fur14.png");
+          background-size: 300px;
+          background-position: 85px 30px;
+          background-repeat: no-repeat;
+          background-color: $product-background-color;
+          position: relative;
+          border-left: 1px solid $product-border-color;
+          border-right: 1px solid $product-border-color;
 
-        &:hover {
-          color: $primary;
-          cursor: pointer;
+          .gallery-actions {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .action-box {
+              margin: 10px 10px 0;
+
+              .tooltip-box {
+                position: relative;
+                visibility: hidden;
+                padding: 7px 10px;
+                font-size: 12px;
+                margin-left: 10px;
+                background-color: $text-color;
+                color: $white;
+                opacity: 0;
+                transition: opacity 250ms;
+                text-transform: capitalize;
+
+                &::before {
+                  content: "";
+                  position: absolute;
+                  top: 10px;
+                  left: -10px;
+                  border-color: transparent $text-color;
+                  border-style: solid;
+                  border-width: 6px 10px 6px 0;
+                }
+              }
+
+              .action-icon {
+                @include hover-only {
+                  &:hover {
+                    color: $primary;
+                    background-color: transparent;
+                    border-color: $primary;
+                  }
+                }
+
+                @include hover-only {
+                  &:hover + .tooltip-box {
+                    visibility: visible;
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+
+          .content {
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 3px 6px rgba(1, 2, 2, 0.24);
+            width: 253px;
+            height: 96px;
+            position: relative;
+            position: absolute;
+            bottom: 30px;
+            right: 1px;
+            background-color: $white;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-style: solid;
+              border-width: 30px 30px 0 0;
+              border-color: $text-color transparent;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              border-style: solid;
+              border-width: 0 0 30px 30px;
+              border-color: $text-color transparent;
+              right: 0;
+              bottom: 0;
+            }
+
+            h5 {
+              color: $text-color;
+              font-size: 16px;
+              line-height: 24px;
+              letter-spacing: 1px;
+            }
+
+            .stars {
+              span {
+                cursor: pointer;
+                text-decoration: none;
+                color: rgb(42, 42, 42);
+                @extend .far;
+                @extend .fa-star;
+
+                &.full {
+                  @extend .fas;
+                }
+              }
+            }
+
+            .stars-high {
+              span {
+                text-decoration: none;
+                color: $primary;
+                @extend .far;
+                @extend .fa-star;
+
+                &.full {
+                  @extend .fas;
+                }
+              }
+            }
+          }
+
+          .circle-price {
+            position: absolute;
+            width: 105px;
+            height: 105px;
+            background-color: $text-color;
+            opacity: 0.6;
+            border-radius: 50%;
+            bottom: 110px;
+            right: 75px;
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .current-price {
+              font-size: 20px;
+              font-weight: 500;
+              margin-bottom: 0;
+              margin-top: 20px;
+            }
+
+            .previous-price {
+              font-size: 16px;
+              text-decoration: line-through;
+            }
+          }
+        }
+
+        .gallery-slider-container {
+          border-top: 1px solid $product-border-color;
+          border-bottom: 1px solid $product-border-color;
+
+          .gallery-slider-pictures {
+            overflow-x: hidden;
+            padding: 8px 33px;
+
+            .gallery-slider-line-toprated {
+              display: flex;
+              transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+              .gallery-slide-box {
+                display: flex;
+                justify-content: space-around;
+                flex: 1 0 16.66%;
+
+                @include media-breakpoint-only(lg) {
+                  flex: 1 0 25%;
+                }
+
+                @include media-breakpoint-down(sm) {
+                  flex: 1 0 25%;
+                }
+
+                @media (max-width: 460px) {
+                  flex: 1 0 33.33%;
+                }
+
+                @media (max-width: 360px) {
+                  flex: 1 0 50%;
+                }
+
+                .gallery-slide-image {
+                  opacity: 0.5;
+                  background-color: $gallery-slider-color;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  @include hover-only {
+                    &:hover {
+                      cursor: pointer;
+                    }
+                  }
+
+                  img {
+                    height: 70px;
+                    width: 70px;
+                  }
+                }
+              }
+            }
+          }
+
+          .gallery-slider-nav {
+            position: relative;
+
+            .gallery-arrow-box {
+              height: 70px;
+              width: 33px;
+              background-color: $text-color;
+              color: $white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              @include hover-only {
+                &:hover {
+                  color: $primary;
+                  cursor: pointer;
+                }
+              }
+            }
+
+            .gallery-arrow-prev {
+              position: absolute;
+              top: -78px;
+              left: 0;
+            }
+
+            .gallery-arrow-next {
+              position: absolute;
+              top: -78px;
+              right: 0;
+            }
+          }
         }
       }
     }
@@ -289,9 +1135,11 @@
           outline: none;
           margin: 10px 0;
 
-          &:hover {
-            background-color: $primary;
-            cursor: pointer;
+          @include hover-only {
+            &:hover {
+              background-color: $primary;
+              cursor: pointer;
+            }
           }
         }
       }
