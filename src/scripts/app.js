@@ -6,4 +6,4 @@ import './carousel-posts';
 import './shopping-cart';
 import './leave-page-modal';
 import './brands-slider';
-import './section-Gallery';
+import './section-gallery';
