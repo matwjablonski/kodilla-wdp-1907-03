@@ -76,7 +76,6 @@ banner.addEventListener(
     } else if (dist < 0 && Math.abs(dist) > threshold && elapsedTime <= allowedTime) {
       swipeDirection = false; // previous picture
       bannerSwipe(swipeDirection);
-    } else {
     }
   },
   false
