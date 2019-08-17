@@ -5,5 +5,6 @@ import './hot-deals-product';
 import './carousel-posts';
 import './shopping-cart';
 import './leave-page-modal';
+import './feed';
 import './brands-slider';
 import './section-gallery';
