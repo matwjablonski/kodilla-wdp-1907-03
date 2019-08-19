@@ -1,5 +1,6 @@
 const url = 'https://restcountries.eu/rest/v2';
-
+const currencyOutput = document.getElementById('currency');
+const langsOutput = document.getElementById('languages');
 let currencies = [];
 let languages = [];
 
@@ -14,11 +15,9 @@ function getLangs () {
         .map(x => x.languages[0].name);
       languages = [...new Set(languages)];
       languages.forEach(lang => {
-        document.getElementById('languages').insertAdjacentHTML(
+        langsOutput.insertAdjacentHTML(
           'beforeend',
-          `
-            <option value="${lang}">${lang}</option>
-            `
+          `<option value="${lang}">${lang}</option>`
         );
       });
     }
@@ -38,11 +37,9 @@ function getCurrencies () {
         .map(x => x.currencies[0].code);
       currencies = [...new Set(currencies)];
       currencies.forEach(curr => {
-        document.getElementById('currency').insertAdjacentHTML(
+        currencyOutput.insertAdjacentHTML(
           'beforeend',
-          `
-              <option value="${curr}">${curr}</option>
-              `
+          `<option value="${curr}">${curr}</option>`
         );
       });
     }
