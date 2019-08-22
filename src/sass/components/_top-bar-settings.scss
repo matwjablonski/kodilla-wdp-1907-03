@@ -1,0 +1,47 @@
+.top-bar-settings {
+  li {
+    &:hover {
+      .top-bar-select,
+      i {
+        color: $primary;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .currency,
+  .language {
+    position: relative;
+
+    i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10px;
+      color: $white;
+      z-index: 0;
+      @include fade;
+    }
+
+    .top-bar-select {
+      background: transparent;
+      z-index: 900;
+      border: none;
+      color: $white;
+      font-size: 14px;
+      z-index: 2;
+      min-width: 80px;
+      max-width: 120px;
+      -webkit-appearance: none;
+      @include fade;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

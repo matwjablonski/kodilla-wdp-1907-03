@@ -8,3 +8,4 @@ import './leave-page-modal';
 import './feed';
 import './brands-slider';
 import './section-gallery';
+import './lang-curr-list';
